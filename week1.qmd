@@ -1,0 +1,63 @@
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+---
+title: "1. Introduction of remote sensing"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    highlight-style: github
+---
+
+## 1. Summary
+
+Remote sensing is essentially a high-tech method for collecting Earth observation (EO) data from a distance, mainly using sensors on satellites or aircraft. In my initial exploration of this field, I've learned that everything hinges on understanding how electromagnetic waves interact with the Earth's surface and atmosphere. These interactions happen through four key processes: **absorption** (where energy is soaked up), **transmission** (where waves pass through), **scattering** (where waves bounce in different directions), and **reflection** (where waves bounce straight back).
+
+One of the biggest hurdles in remote sensing is interference from particles in the atmosphere—like dust, water vapor, or pollution. These particles cause unwanted scattering of the electromagnetic waves before they reach the sensor, which distorts the data and makes it harder to get clear pictures of what's actually on the ground. That's why **atmospheric correction** is such a critical step—it's not optional but absolutely essential. This process removes those distortions to recover the true spectral signatures of surface features, ensuring our analyses are accurate and reliable for applications like urban monitoring or environmental tracking.
+
+### The Framework of Resolution
+
+To evaluate remote sensing data properly, we need to consider its **four key types of resolution**.
+
+-   **Spatial resolution**: This determines the level of detail you can see—think 10m pixels from Sentinel-2 (quite sharp) versus 30m from Landsat (coarser).
+
+    ![The Spatial resolution dimensions. *Source: gisgeography.com*](https://gisgeography.com/wp-content/uploads/2015/10/Spatial-Resolution-Comparison.png){#fig-spatial fig-alt="Diagram comparing spatial, spectral, and feature resolutions" fig-align="center" width="80%"}
+
+-   **Spectral resolution**: How specific the wavelength bands are that the sensor captures.
+
+    ![The Spectral resolution dimensions. *Source: usgs.gov*](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Aquatic%20Remote%20Sensing%20-%20Examples%20of%20spectral%20resolution.png){#fig-spectral width="80%" fig-align="center" fig-alt="Aquatic remote sensing examples of spectral resolution"}
+
+-   **Radiometric resolution**: The sensor's ability to detect small differences in energy levels (measured by bit depth).
+
+    ![The Radiometric resolution dimensions. *Source: Medium/miro.medium.com*](https://miro.medium.com/v2/resize:fit:1320/format:webp/1*Dm_9tOAH_2YWURGuU0uPZA.jpeg){#fig-radiometric width="80%" fig-align="center" fig-alt="Diagram showing radiometric resolution bit depth comparisons"}
+
+-   **Temporal resolution**: How often the satellite passes over the same spot on Earth.
+
+    ![The Temporal resolution dimensions. *Source: natural-resources.canada.ca*](https://natural-resources.canada.ca/sites/nrcan/files/earthsciences/images/resource/tutor/fundam/images/spotpoint.gif){#fig-temporal width="80%" fig-align="center" fig-alt="Diagram illustrating temporal resolution in remote sensing"}
+
+Choosing the right sensor always involves trade-offs. Sentinel-2 shines with its 5-day revisit cycle and finer spatial detail, perfect for tracking fast-changing landscapes like urban growth. Landsat, meanwhile, provides a massive historical archive going back decades, plus thermal infrared bands that Sentinel-2 doesn't have.
+
+To analyse this data effectively, we use techniques like the **Tasseled Cap transformation**—a mathematical method that groups pixels into useful categories: brightness, greenness, and wetness.
+
+------------------------------------------------------------------------
+
+## 2. Applications
+
+The versatility of remote sensing is best demonstrated through its diverse real-world applications. The literature highlights a shift from broad-scale observations to nuanced, project-specific methodologies.
+
+### Vegetation and Environmental Monitoring
+
+In the realm of biological studies, there has been a notable paradigm shift. Traditional indices like the **NDVI** (Normalized Difference Vegetation Index) are increasingly being supplemented by **Sentinel-2’s narrow red-edge bands**. While NDVI is a robust tool, it often "saturates" in areas with dense leaf coverage. By utilizing narrow-band spectral data, researchers can estimate plant health with significantly higher accuracy, proving that spectral precision is often more vital than spatial resolution for ecological preservation.
+
+### 
+
+## 3. Reflection
+
+Reflecting on the journey through these modules, it has become increasingly clear that remote sensing is far more than a collection of high-altitude photographs; it is a vital lens through which we can decipher the biophysical complexities of our world. However, as I move deeper into my studies at UCL, I am beginning to realize that the transition from theory to practice is fraught with significant technical and ethical trade-offs that require a highly critical eye.
+
+One of the most striking realizations for me has been the "mixed pixel" dilemma in urban spatial science. When we work with downsampled data—for instance, shifting from a 10m to a 20m resolution—we aren't just losing clarity; we are potentially distorting the truth. In a dense city like Hong Kong, a single pixel might blend a narrow, shaded alleyway with a sun-drenched concrete rooftop. This "mixed signal" can lead to inaccuracies in mapping urban heat islands, which in turn could result in flawed public health policies. It reminds me that data quality is not just a technical metric, but a cornerstone of responsible governance.
+
+## 

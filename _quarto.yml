@@ -1,0 +1,26 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!wk2presentation.Rmd"
+
+website:
+  title: "My Remote Sensing Diary"
+  sidebar:
+    style: "docked"
+    search: true  
+    contents:
+      - text: "Home"
+        file: index.qmd
+      - section: "Learning Diary"
+        contents:
+          - intro.qmd
+          - week1.qmd
+          - week2.qmd
+          - week3.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true 

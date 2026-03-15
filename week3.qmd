@@ -1,0 +1,58 @@
+---
+title: "3. Corrections"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    highlight-style: github
+---
+
+## 1. Summary
+
+Remote sensing data pre-processing is broadly divided into two critical phases: **Corrections** and **Enhancements**. While corrections focus on rectifying errors introduced by the atmosphere or sensor mechanics, enhancements are designed to amplify the signal and extract hidden geographical patterns.
+
+### Spectral Ratios and the NDVI
+
+Ratioing is a powerful enhancement technique that exploits the contrast between different spectral bands to highlight specific landscape features. A fundamental application of this is the **Normalized Difference Vegetation Index (NDVI)**. This index leverages the physiological fact that healthy vegetation absorbs red light for photosynthesis while reflecting near-infrared (NIR) light.
+
+During the practical analysis of **Cape Town**, the utility of NDVI became evident. By applying a threshold (e.g., NDVI \> 0.2), we can distinguish between active farmlands in the north, where winter rains trigger rapid crop growth, and the native fynbos vegetation of the south, which exhibits lower spectral reflectance. This demonstrates that spectral ratios are not just mathematical abstractions but tools for understanding regional phenology and topography.
+
+### Texture and Spatial Complexity
+
+Beyond pixel-by-pixel spectral values, **Texture Analysis** quantifies the spatial relationship and structural complexity between a pixel and its neighbors. It essentially measures "smoothness" versus "roughness."
+
+A critical factor in texture analysis is the **moving window size**. While a small 3x3 window is adept at capturing fine details and precise boundaries, it often introduces "salt-and-pepper" noise. Conversely, larger windows provide a broader context but may obscure localized variations. This necessitates a strategic selection of metrics—such as homogeneity or contrast—to accurately characterize the urban fabric.
+
+| Enhancement | Primary Benefit | Main Limitation |
+|:-----------------------|:-----------------------|:-----------------------|
+| **NDVI** | Rapidly assesses vegetation health and minimizes topography effects. | Often saturates in high-biomass areas (forests). |
+| **Texture** | Adds spatial context and structural complexity to images. | Highly sensitive to subjective window size choices. |
+
+------------------------------------------------------------------------
+
+## 2. Application
+
+The practical applications of these enhancements extend far beyond simple mapping, offering critical insights into environmental resilience and social equity.
+
+### 1. Burn Severity with NBR
+
+In the context of disaster management, the **Normalized Burn Ratio (NBR)** is an indispensable tool. Similar to NDVI, NBR contrasts the NIR and Shortwave Infrared (SWIR) bands to identify burnt areas. Healthy vegetation reflects NIR and absorbs SWIR, whereas bare ground or recent burns show the opposite pattern. By calculating the difference between pre-fire and post-fire NBR (**dNBR**), researchers can accurately assess burn severity, providing a data-driven foundation for post-disaster land management and recovery.
+
+### 2. Distinguishing Informal Settlements (Slums)
+
+Perhaps one of the most socially relevant applications of remote sensing is the detection of informal urban settlements. Standard spectral ratios often fail here because slums and formal housing may use similar construction materials, leading to the "same spectrum, different object" problem.
+
+Literature by **Wang, Kuffer, and Pfeffer (2019)** demonstrates that texture analysis (GLCM) is far more effective at identifying slums. Because informal settlements often lack planned grids and exhibit higher structural heterogeneity (higher "roughness"), texture metrics can distinguish them from organized, formal neighborhoods. This application is vital for urban planners aiming to address the digital and infrastructural divide in rapidly growing global cities.
+
+------------------------------------------------------------------------
+
+## 3. Reflection
+
+Reflecting on this week’s transition from technical corrections to data enhancements, I have found the latter to be significantly more engaging. While corrections like Dark Object Subtraction (DOS) are necessary "cleaning" steps, enhancements like NDVI and Texture feel like the point where data truly begins to tell a story. There is a certain intellectual satisfaction in drawing out hidden narratives—such as the subtle "roughness" of an informal settlement—that would remain invisible in a raw satellite image.
+
+However, this week has also introduced a sense of professional nervousness regarding the subjectivity of these methods. My practical experience with Cape Town’s texture analysis revealed how much the final output depends on a single, seemingly arbitrary choice: the **window size**. Selecting a 3x3 window vs a 15x15 window doesn't just change the look of the map; it changes the conclusion. If we pick an incorrect window size in a policy context, we risk misclassifying a vulnerable community or overlooking a critical environmental change.
+
+This realization reinforces my belief that remote sensing is a blend of science and art. The "same spectrum, different object" dilemma proves that spectral data is not the whole truth. It is the analyst's responsibility to select the right combination of tools—such as **Data Fusion** between optical indices and texture metrics—to reduce reliance on manual trial and error.
+
+Furthermore, as I look toward my dissertation at UCL, I am increasingly aware that these complex calculations, particularly GLCM, are computationally heavy. Relying on GUIs like SNAP is becoming a bottleneck. To truly implement adaptive window sizes or integrate texture into deep learning networks, transitioning to **Google Earth Engine** or **R** is no longer just an advantage—it is a necessity for modern urban spatial science. The goal is to move beyond "fixing errors" and toward "deciphering complexity," ensuring that our spatial interventions are grounded in the most accurate representation of reality possible.
