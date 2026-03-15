@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2. Introduction to Quarto and Xaringan – My Remote Sensing Diary</title>
+<title>3. Corrections – My Remote Sensing Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bcb4737e8fbcf1e9dfc00b59f8305558.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-24882cfe16963d34ce4f1a7ff90b660f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week2.html">2. Introduction to Quarto and Xaringan</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week3.html">3. Corrections</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,13 +135,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./week2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2. Introduction to Quarto and Xaringan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week3.html" class="sidebar-item-text sidebar-link">
+  <a href="./week3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">3. Corrections</span></a>
   </div>
 </li>
@@ -152,15 +152,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">1. Summary</a>
+  <ul class="collapse">
+  <li><a href="#spectral-ratios-and-the-ndvi" id="toc-spectral-ratios-and-the-ndvi" class="nav-link" data-scroll-target="#spectral-ratios-and-the-ndvi">Spectral Ratios and the NDVI</a></li>
+  <li><a href="#texture-and-spatial-complexity" id="toc-texture-and-spatial-complexity" class="nav-link" data-scroll-target="#texture-and-spatial-complexity">Texture and Spatial Complexity</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">2. Application</a>
+  <ul class="collapse">
+  <li><a href="#burn-severity-with-nbr" id="toc-burn-severity-with-nbr" class="nav-link" data-scroll-target="#burn-severity-with-nbr">1. Burn Severity with NBR</a></li>
+  <li><a href="#distinguishing-informal-settlements-slums" id="toc-distinguishing-informal-settlements-slums" class="nav-link" data-scroll-target="#distinguishing-informal-settlements-slums">2. Distinguishing Informal Settlements (Slums)</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">3. Reflection</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week2.html">2. Introduction to Quarto and Xaringan</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week3.html">3. Corrections</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">2. Introduction to Quarto and Xaringan</h1>
+<h1 class="title">3. Corrections</h1>
 </div>
 
 
@@ -177,12 +193,70 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Here is a presentation discussing the <strong>Landsat 9</strong> mission:</p>
-<iframe src="wk2presentation.html" width="100%" height="500px">
-</iframe>
-<p>For full screen presentation of these slides, they are available [<a href="wk2presentation.html">here</a>] !</p>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">1. Summary</h2>
+<p>Remote sensing data pre-processing is broadly divided into two critical phases: <strong>Corrections</strong> and <strong>Enhancements</strong>. While corrections focus on rectifying errors introduced by the atmosphere or sensor mechanics, enhancements are designed to amplify the signal and extract hidden geographical patterns.</p>
+<section id="spectral-ratios-and-the-ndvi" class="level3">
+<h3 class="anchored" data-anchor-id="spectral-ratios-and-the-ndvi">Spectral Ratios and the NDVI</h3>
+<p>Ratioing is a powerful enhancement technique that exploits the contrast between different spectral bands to highlight specific landscape features. A fundamental application of this is the <strong>Normalized Difference Vegetation Index (NDVI)</strong>. This index leverages the physiological fact that healthy vegetation absorbs red light for photosynthesis while reflecting near-infrared (NIR) light.</p>
+<p>During the practical analysis of <strong>Cape Town</strong>, the utility of NDVI became evident. By applying a threshold (e.g., NDVI &gt; 0.2), we can distinguish between active farmlands in the north, where winter rains trigger rapid crop growth, and the native fynbos vegetation of the south, which exhibits lower spectral reflectance. This demonstrates that spectral ratios are not just mathematical abstractions but tools for understanding regional phenology and topography.</p>
+</section>
+<section id="texture-and-spatial-complexity" class="level3">
+<h3 class="anchored" data-anchor-id="texture-and-spatial-complexity">Texture and Spatial Complexity</h3>
+<p>Beyond pixel-by-pixel spectral values, <strong>Texture Analysis</strong> quantifies the spatial relationship and structural complexity between a pixel and its neighbors. It essentially measures “smoothness” versus “roughness.”</p>
+<p>A critical factor in texture analysis is the <strong>moving window size</strong>. While a small 3x3 window is adept at capturing fine details and precise boundaries, it often introduces “salt-and-pepper” noise. Conversely, larger windows provide a broader context but may obscure localized variations. This necessitates a strategic selection of metrics—such as homogeneity or contrast—to accurately characterize the urban fabric.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Enhancement</th>
+<th style="text-align: left;">Primary Benefit</th>
+<th style="text-align: left;">Main Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NDVI</strong></td>
+<td style="text-align: left;">Rapidly assesses vegetation health and minimizes topography effects.</td>
+<td style="text-align: left;">Often saturates in high-biomass areas (forests).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Texture</strong></td>
+<td style="text-align: left;">Adds spatial context and structural complexity to images.</td>
+<td style="text-align: left;">Highly sensitive to subjective window size choices.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">2. Application</h2>
+<p>The practical applications of these enhancements extend far beyond simple mapping, offering critical insights into environmental resilience and social equity.</p>
+<section id="burn-severity-with-nbr" class="level3">
+<h3 class="anchored" data-anchor-id="burn-severity-with-nbr">1. Burn Severity with NBR</h3>
+<p>In the context of disaster management, the <strong>Normalized Burn Ratio (NBR)</strong> is an indispensable tool. Similar to NDVI, NBR contrasts the NIR and Shortwave Infrared (SWIR) bands to identify burnt areas. Healthy vegetation reflects NIR and absorbs SWIR, whereas bare ground or recent burns show the opposite pattern. By calculating the difference between pre-fire and post-fire NBR (<strong>dNBR</strong>), researchers can accurately assess burn severity, providing a data-driven foundation for post-disaster land management and recovery.</p>
+</section>
+<section id="distinguishing-informal-settlements-slums" class="level3">
+<h3 class="anchored" data-anchor-id="distinguishing-informal-settlements-slums">2. Distinguishing Informal Settlements (Slums)</h3>
+<p>Perhaps one of the most socially relevant applications of remote sensing is the detection of informal urban settlements. Standard spectral ratios often fail here because slums and formal housing may use similar construction materials, leading to the “same spectrum, different object” problem.</p>
+<p>Literature by <strong>Wang, Kuffer, and Pfeffer (2019)</strong> demonstrates that texture analysis (GLCM) is far more effective at identifying slums. Because informal settlements often lack planned grids and exhibit higher structural heterogeneity (higher “roughness”), texture metrics can distinguish them from organized, formal neighborhoods. This application is vital for urban planners aiming to address the digital and infrastructural divide in rapidly growing global cities.</p>
+<hr>
+</section>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">3. Reflection</h2>
+<p>Reflecting on this week’s transition from technical corrections to data enhancements, I have found the latter to be significantly more engaging. While corrections like Dark Object Subtraction (DOS) are necessary “cleaning” steps, enhancements like NDVI and Texture feel like the point where data truly begins to tell a story. There is a certain intellectual satisfaction in drawing out hidden narratives—such as the subtle “roughness” of an informal settlement—that would remain invisible in a raw satellite image.</p>
+<p>However, this week has also introduced a sense of professional nervousness regarding the subjectivity of these methods. My practical experience with Cape Town’s texture analysis revealed how much the final output depends on a single, seemingly arbitrary choice: the <strong>window size</strong>. Selecting a 3x3 window vs a 15x15 window doesn’t just change the look of the map; it changes the conclusion. If we pick an incorrect window size in a policy context, we risk misclassifying a vulnerable community or overlooking a critical environmental change.</p>
+<p>This realization reinforces my belief that remote sensing is a blend of science and art. The “same spectrum, different object” dilemma proves that spectral data is not the whole truth. It is the analyst’s responsibility to select the right combination of tools—such as <strong>Data Fusion</strong> between optical indices and texture metrics—to reduce reliance on manual trial and error.</p>
+<p>Furthermore, as I look toward my dissertation at UCL, I am increasingly aware that these complex calculations, particularly GLCM, are computationally heavy. Relying on GUIs like SNAP is becoming a bottleneck. To truly implement adaptive window sizes or integrate texture into deep learning networks, transitioning to <strong>Google Earth Engine</strong> or <strong>R</strong> is no longer just an advantage—it is a necessity for modern urban spatial science. The goal is to move beyond “fixing errors” and toward “deciphering complexity,” ensuring that our spatial interventions are grounded in the most accurate representation of reality possible.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
