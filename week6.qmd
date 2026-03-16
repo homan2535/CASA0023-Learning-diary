@@ -1,0 +1,92 @@
+---
+title: "6. Classification I"
+format:
+  html:
+    toc: true
+    code-fold: true
+    theme: cosmo
+---
+
+## 6.1 Summary
+
+This week was all about the "Battle of the Algorithms." I took the training data I collected for the Shenzhen and Hong Kong region and ran it through two different machine learning models: **Classification and Regression Trees (CART)** and **Random Forest (RF)**. The goal was to see which one could better handle the complex urban fabric of the Pearl River Delta. 
+
+While both models are trying to do the same thing—group pixels into classes like Urban, Forest, and Water—they go about it in very different ways. CART is like a single person making a decision tree, while Random Forest is like a whole committee of trees voting on the final result.
+
+## 6.2 The Two Models
+
+### 1. CART (Classification and Regression Trees)
+CART is a simple and fast algorithm. It looks at the spectral bands and makes a series of "if-then" choices to sort pixels. For example, "If the NIR band is high, it is probably a tree." However, because it's just one tree, it can be quite "brittle." If your training data is a bit messy, the whole tree gets confused easily.
+
+### 2. Random Forest (RF)
+Random Forest is much more robust. It creates many different decision trees using random subsets of the data and then averages the results. This "ensemble" approach usually helps to fix the mistakes that a single tree might make. 
+
+#### 6.2.1 Machine Learning Overview
+
+| Algorithm | Type | Description |
+|:---|:---:|:---|
+| **CART** | Supervised | Uses a single decision tree to split pixels into groups based on spectral values. |
+| **Random Forest** | Supervised | An "ensemble" model that generates numerous decision trees (usually at least 20-100) using random sampling to reach a final classification through voting. |
+
+## 6.3 Observations: CART vs. Random Forest
+
+When looking at the two outputs, there are some really clear differences in how they "see" the city.
+
+### Validation Accuracy
+The biggest takeaway from the results was that **Random Forest’s validation accuracy was higher compared to CART’s.** This makes total sense. Because RF uses multiple trees, it is much better at generalizing. CART tended to "memorize" my training points too much, so when I asked it to classify the rest of the map, it struggled way more than the Random Forest did.
+
+### Visual "Noise" and Texture
+If you look at the final maps, both of them have a bit of a "salt and pepper" effect, where random pixels are scattered around. However, the Random Forest map looks a bit more "solid." CART seems to be more sensitive to small changes in light or shadow, which makes the map look noisier. 
+
+One thing both models struggled with was the difference between "Urban" and "Bare Earth." In this region, concrete and dry soil look very similar to a satellite, so the models kept swapping them.
+
+---
+
+## 6.4 Visual Analysis
+
+Below are the results showing how the two models classified the same area.
+
+### CART Classification
+![CART Output Map](Cart.png)
+
+### Random Forest Classification
+![Random Forest Output Map](RF.png)
+
+After running both models on the Shenzhen study area, I can see why one is often preferred over the other.
+
+### 6.5 Analysis Table
+
+| Model | **Strengths** | **Weaknesses** | **How to Make Better** |
+|:---|:---|:---|:---|
+| **CART** | Easy to understand, runs very fast even on detailed maps. | Gets confused easily by small data changes. Creates noisy, spotty maps. | Use **OBIA** first to group similar pixels together before classifying. |
+| **Random Forest** | Much more accurate with cleaner maps. Combines many trees for reliable results. | Needs lots of computer power and takes longer to run. | New **speed-up methods** make it work faster on huge global maps. |
+
+---
+
+### 6.6 Application
+
+Machine learning models have become the go-to tool for tracking how cities grow and change over time. Using Google Earth Engine, we can run "Land Use and Land Cover Change" (LULCC) analysis to monitor urban sprawl or environmental health much faster than traditional methods. However, one of the biggest lessons I learned this week is that simply picking a "fancy" algorithm like Random Forest isn't enough. 
+
+The quality of your map depends heavily on the "features" you feed into the computer. A study by [Phiri et al. (2020)](https://doi.org/10.3390/rs12142270) found that while Random Forest is incredibly powerful, its performance really jumps when you add more than just basic spectral bands. By incorporating things like vegetation indices (NDVI) and water indices, the model gets much better at distinguishing between tricky surfaces that look similar, like wet soil and dark pavement. 
+
+In addition to basic land cover mapping, CART and Random Forest are used for more specific urban challenges.
+
+### Case Study: Urban Expansion and Resource Management
+This is super relevant for urban planning. [Phiri et al. (2020)](https://doi.org/10.3390/rs12142270) showed how these classifiers are used to monitor rapid urban growth in areas where local data might be missing. By using Random Forest in the cloud, researchers can map out "impervious surfaces" (like concrete and roads) to see how much natural land is being lost. 
+
+I think this is a vital tool for the kind of work I want to do in disaster risk reduction. If we know exactly where the city is becoming more "concrete-heavy," we can predict where urban heat islands will form or where flooding will be worst. It really highlights that while the algorithm is the "engine," the extra indices and features are the "fuel" that actually makes the classification accurate. This is exactly why my own classification in GEE felt like such a struggle—I realized I need to be much more strategic about which data I include to help the computer tell the difference between "Urban" and "Bare Earth."
+
+### Case Study: Explaining Urban Sprawl with CART
+Another interesting use of these tools is modeling how cities grow. [Rimal et al. (2019)](https://doi.org/10.3390/su11092571) used **CART** to analyze rapid urbanization in the Kathmandu Valley. They used the "decision tree" logic of CART to find out exactly which factors—like how close an area is to a road—were the biggest drivers of turning farmland into buildings. 
+
+What I like about CART here is that it’s "explainable." Because it’s just a series of yes/no questions, a city planner can actually follow the logic and understand *why* the computer thinks a certain area will become urbanized. In my own experiment, I saw that Random Forest was more accurate, but CART is definitely better for when you need to explain your results to a human instead of just showing a map. The downside, as noted by the researchers and seen in my own work, is that CART is very sensitive. If your training data has a small mistake, the whole "tree" can grow in the wrong direction.
+
+---
+
+## 6.7 Reflection
+
+This was a really interesting experiment because it showed me that more complex isn't always "perfect," but it usually is "better." Seeing that **Random Forest had a higher validation accuracy** than CART really proved the point we keep hearing in our UCL lectures about ensemble models being more reliable. 
+
+I have to say, seeing the maps side-by-side made me realize how much "noise" is actually in satellite data. It’s a bit of a reality check. I used to think the computer would just "know" what a building is, but it’s actually really hard for it to tell a gray roof apart from a gray road or a patch of dry dirt. 
+
+Even though the Random Forest performed better, both models were clearly "overfitting." They were both basically perfect on the training data but much weaker on the validation data. It tells me that for my thesis, I can't just rely on the algorithm to save me. I need to be much more careful with how I pick my training points and maybe even add some extra information, like the texture bands we made in GEE earlier, to help the computer tell the difference between classes. It feels like I'm finally moving away from just "using the tool" to actually "understanding the tool."

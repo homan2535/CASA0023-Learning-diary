@@ -1,5 +1,71 @@
 [
   {
+    "objectID": "week6.html",
+    "href": "week6.html",
+    "title": "6. Classification I",
+    "section": "",
+    "text": "This week was all about the “Battle of the Algorithms.” I took the training data I collected for the Shenzhen and Hong Kong region and ran it through two different machine learning models: Classification and Regression Trees (CART) and Random Forest (RF). The goal was to see which one could better handle the complex urban fabric of the Pearl River Delta.\nWhile both models are trying to do the same thing—group pixels into classes like Urban, Forest, and Water—they go about it in very different ways. CART is like a single person making a decision tree, while Random Forest is like a whole committee of trees voting on the final result.",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
+    "objectID": "week6.html#summary",
+    "href": "week6.html#summary",
+    "title": "6. Classification I",
+    "section": "",
+    "text": "This week was all about the “Battle of the Algorithms.” I took the training data I collected for the Shenzhen and Hong Kong region and ran it through two different machine learning models: Classification and Regression Trees (CART) and Random Forest (RF). The goal was to see which one could better handle the complex urban fabric of the Pearl River Delta.\nWhile both models are trying to do the same thing—group pixels into classes like Urban, Forest, and Water—they go about it in very different ways. CART is like a single person making a decision tree, while Random Forest is like a whole committee of trees voting on the final result.",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
+    "objectID": "week6.html#the-two-models",
+    "href": "week6.html#the-two-models",
+    "title": "6. Classification I",
+    "section": "6.2 The Two Models",
+    "text": "6.2 The Two Models\n\n1. CART (Classification and Regression Trees)\nCART is a simple and fast algorithm. It looks at the spectral bands and makes a series of “if-then” choices to sort pixels. For example, “If the NIR band is high, it is probably a tree.” However, because it’s just one tree, it can be quite “brittle.” If your training data is a bit messy, the whole tree gets confused easily.\n\n\n2. Random Forest (RF)\nRandom Forest is much more robust. It creates many different decision trees using random subsets of the data and then averages the results. This “ensemble” approach usually helps to fix the mistakes that a single tree might make.\n\n6.2.1 Machine Learning Overview\n\n\n\n\n\n\n\n\nAlgorithm\nType\nDescription\n\n\n\n\nCART\nSupervised\nUses a single decision tree to split pixels into groups based on spectral values.\n\n\nRandom Forest\nSupervised\nAn “ensemble” model that generates numerous decision trees (usually at least 20-100) using random sampling to reach a final classification through voting.",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
+    "objectID": "week6.html#observations-cart-vs.-random-forest",
+    "href": "week6.html#observations-cart-vs.-random-forest",
+    "title": "6. Classification I",
+    "section": "6.3 Observations: CART vs. Random Forest",
+    "text": "6.3 Observations: CART vs. Random Forest\nWhen looking at the two outputs, there are some really clear differences in how they “see” the city.\n\nValidation Accuracy\nThe biggest takeaway from the results was that Random Forest’s validation accuracy was higher compared to CART’s. This makes total sense. Because RF uses multiple trees, it is much better at generalizing. CART tended to “memorize” my training points too much, so when I asked it to classify the rest of the map, it struggled way more than the Random Forest did.\n\n\nVisual “Noise” and Texture\nIf you look at the final maps, both of them have a bit of a “salt and pepper” effect, where random pixels are scattered around. However, the Random Forest map looks a bit more “solid.” CART seems to be more sensitive to small changes in light or shadow, which makes the map look noisier.\nOne thing both models struggled with was the difference between “Urban” and “Bare Earth.” In this region, concrete and dry soil look very similar to a satellite, so the models kept swapping them.",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
+    "objectID": "week6.html#visual-analysis",
+    "href": "week6.html#visual-analysis",
+    "title": "6. Classification I",
+    "section": "6.4 Visual Analysis",
+    "text": "6.4 Visual Analysis\nBelow are the results showing how the two models classified the same area.\n\nCART Classification\n\n\n\nCART Output Map\n\n\n\n\nRandom Forest Classification\n\n\n\nRandom Forest Output Map\n\n\nAfter running both models on the Shenzhen study area, I can see why one is often preferred over the other.\n\n\n6.5 Analysis Table\n\n\n\n\n\n\n\n\n\nModel\nStrengths\nWeaknesses\nHow to Make Better\n\n\n\n\nCART\nEasy to understand, runs very fast even on detailed maps.\nGets confused easily by small data changes. Creates noisy, spotty maps.\nUse OBIA first to group similar pixels together before classifying.\n\n\nRandom Forest\nMuch more accurate with cleaner maps. Combines many trees for reliable results.\nNeeds lots of computer power and takes longer to run.\nNew speed-up methods make it work faster on huge global maps.\n\n\n\n\n\n\n6.6 Application\nMachine learning models have become the go-to tool for tracking how cities grow and change over time. Using Google Earth Engine, we can run “Land Use and Land Cover Change” (LULCC) analysis to monitor urban sprawl or environmental health much faster than traditional methods. However, one of the biggest lessons I learned this week is that simply picking a “fancy” algorithm like Random Forest isn’t enough.\nThe quality of your map depends heavily on the “features” you feed into the computer. A study by Phiri et al. (2020) found that while Random Forest is incredibly powerful, its performance really jumps when you add more than just basic spectral bands. By incorporating things like vegetation indices (NDVI) and water indices, the model gets much better at distinguishing between tricky surfaces that look similar, like wet soil and dark pavement.\nIn addition to basic land cover mapping, CART and Random Forest are used for more specific urban challenges.\n\n\nCase Study: Urban Expansion and Resource Management\nThis is super relevant for urban planning. Phiri et al. (2020) showed how these classifiers are used to monitor rapid urban growth in areas where local data might be missing. By using Random Forest in the cloud, researchers can map out “impervious surfaces” (like concrete and roads) to see how much natural land is being lost.\nI think this is a vital tool for the kind of work I want to do in disaster risk reduction. If we know exactly where the city is becoming more “concrete-heavy,” we can predict where urban heat islands will form or where flooding will be worst. It really highlights that while the algorithm is the “engine,” the extra indices and features are the “fuel” that actually makes the classification accurate. This is exactly why my own classification in GEE felt like such a struggle—I realized I need to be much more strategic about which data I include to help the computer tell the difference between “Urban” and “Bare Earth.”\n\n\nCase Study: Explaining Urban Sprawl with CART\nAnother interesting use of these tools is modeling how cities grow. Rimal et al. (2019) used CART to analyze rapid urbanization in the Kathmandu Valley. They used the “decision tree” logic of CART to find out exactly which factors—like how close an area is to a road—were the biggest drivers of turning farmland into buildings.\nWhat I like about CART here is that it’s “explainable.” Because it’s just a series of yes/no questions, a city planner can actually follow the logic and understand why the computer thinks a certain area will become urbanized. In my own experiment, I saw that Random Forest was more accurate, but CART is definitely better for when you need to explain your results to a human instead of just showing a map. The downside, as noted by the researchers and seen in my own work, is that CART is very sensitive. If your training data has a small mistake, the whole “tree” can grow in the wrong direction.",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
+    "objectID": "week6.html#reflection",
+    "href": "week6.html#reflection",
+    "title": "6. Classification I",
+    "section": "6.7 Reflection",
+    "text": "6.7 Reflection\nThis was a really interesting experiment because it showed me that more complex isn’t always “perfect,” but it usually is “better.” Seeing that Random Forest had a higher validation accuracy than CART really proved the point we keep hearing in our UCL lectures about ensemble models being more reliable.\nI have to say, seeing the maps side-by-side made me realize how much “noise” is actually in satellite data. It’s a bit of a reality check. I used to think the computer would just “know” what a building is, but it’s actually really hard for it to tell a gray roof apart from a gray road or a patch of dry dirt.\nEven though the Random Forest performed better, both models were clearly “overfitting.” They were both basically perfect on the training data but much weaker on the validation data. It tells me that for my thesis, I can’t just rely on the algorithm to save me. I need to be much more careful with how I pick my training points and maybe even add some extra information, like the texture bands we made in GEE earlier, to help the computer tell the difference between classes. It feels like I’m finally moving away from just “using the tool” to actually “understanding the tool.”",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
     "objectID": "week4.html",
     "href": "week4.html",
     "title": "4. Policy",
@@ -179,6 +245,72 @@
     "crumbs": [
       "Learning Diary",
       "3. Corrections"
+    ]
+  },
+  {
+    "objectID": "week5.html",
+    "href": "week5.html",
+    "title": "5. Google Earth Engine",
+    "section": "",
+    "text": "In this section, I performed a geospatial analysis of Delhi, India, using Google Earth Engine (GEE). The workflow involved the ingestion and pre-processing of Landsat 8 Collection 2 imagery to assess urban greening and land cover characteristics. GEE’s cloud-based environment allowed for the efficient implementation of advanced spatial transforms, including Gray-Level Co-occurrence Matrix (GLCM) for texture analysis and Principal Component Analysis (PCA) to reduce spectral dimensionality. By leveraging GEE’s parallel processing, I was able to generate city-wide statistics for 2023 without the local computational constraints typical of traditional GIS software.",
+    "crumbs": [
+      "Learning Diary",
+      "5. Google Earth Engine"
+    ]
+  },
+  {
+    "objectID": "week5.html#summary",
+    "href": "week5.html#summary",
+    "title": "5. Google Earth Engine",
+    "section": "",
+    "text": "In this section, I performed a geospatial analysis of Delhi, India, using Google Earth Engine (GEE). The workflow involved the ingestion and pre-processing of Landsat 8 Collection 2 imagery to assess urban greening and land cover characteristics. GEE’s cloud-based environment allowed for the efficient implementation of advanced spatial transforms, including Gray-Level Co-occurrence Matrix (GLCM) for texture analysis and Principal Component Analysis (PCA) to reduce spectral dimensionality. By leveraging GEE’s parallel processing, I was able to generate city-wide statistics for 2023 without the local computational constraints typical of traditional GIS software.",
+    "crumbs": [
+      "Learning Diary",
+      "5. Google Earth Engine"
+    ]
+  },
+  {
+    "objectID": "week5.html#gee-workflow",
+    "href": "week5.html#gee-workflow",
+    "title": "5. Google Earth Engine",
+    "section": "5.2 GEE Workflow",
+    "text": "5.2 GEE Workflow\nThe analysis followed the standard GEE “Filter-Map-Reduce” architecture, which is essential for handling large-scale satellite archives.\n\n1. Image Collection and Filtering\nThe workflow begins by loading the Landsat 8 Surface Reflectance (Collection 2 Level 2) archive. To ensure data quality for the Delhi study area, I applied filters based on spatial bounds (ADM1 Delhi boundary), a temporal range (full year of 2023), and a metadata filter to exclude scenes with &gt;20% cloud cover.\n\n\n2. Pre-processing and Scaling\nGEE employs a Client-Server model where the JavaScript API (Client) sends instructions to Google’s servers. A critical step is applying the scale factors required for Collection 2 data to convert raw integers into physical units:\n\nReflectance: \\(DN \\times 0.0000275 - 0.2\\)\nSurface Temperature (ST_B10): \\(DN \\times 0.00341802 + 149.0\\)\n\n\n\n3. Spectral Index Calculation\nUsing the scaled bands, I calculated the Normalized Difference Vegetation Index (NDVI) to measure photosynthetic activity. This was achieved using the .normalizedDifference() function, which is computationally optimized for server-side execution.\n\n\n4. Advanced Spatial Transforms\n\nGLCM Texture: I used the .glcmTexture() function on the Near-Infrared (NIR) band to calculate “Contrast” and “Entropy.” This identifies the “roughness” of urban surfaces, helping to distinguish high-density informal settlements from planned industrial or residential zones.\nPCA: A Principal Component Analysis was conducted to transform correlated spectral bands into a new set of orthogonal components. This highlights the primary spectral variances (like albedo and vegetation contrast) across the city.",
+    "crumbs": [
+      "Learning Diary",
+      "5. Google Earth Engine"
+    ]
+  },
+  {
+    "objectID": "week5.html#applications-delhi-and-beyond",
+    "href": "week5.html#applications-delhi-and-beyond",
+    "title": "5. Google Earth Engine",
+    "section": "5.3 Applications: Delhi and Beyond",
+    "text": "5.3 Applications: Delhi and Beyond\nUsing GEE for a massive city like Delhi really opens up a lot of doors for urban planning. I realized that these tools aren’t just for making pretty maps, but for solving actual problems.\n\nUrban Heat Island (UHI) Monitoring\nBy combining the Surface Temperature (LST) and NDVI, we can see where the “concrete jungle” is actually making the city hotter. In Delhi, where temperatures get extreme, identifying these hotspots is the first step toward planning more green roofs or planting more trees in the densest neighborhoods.\n\n\nDisaster Risk and Vulnerability\nSince I’m interested in disaster risk reduction, GEE is a lifesaver. You can look at flood-prone areas or check how urban sprawl is moving into dangerous zones. Because GEE has years of historical data, you can actually see the city growing over time and predict where the next vulnerable spots might be. It’s way more powerful than just looking at a static map from one year.",
+    "crumbs": [
+      "Learning Diary",
+      "5. Google Earth Engine"
+    ]
+  },
+  {
+    "objectID": "week5.html#results-and-visual-analysis",
+    "href": "week5.html#results-and-visual-analysis",
+    "title": "5. Google Earth Engine",
+    "section": "5.4 Results and Visual Analysis",
+    "text": "5.4 Results and Visual Analysis\nBelow are the visual outputs and statistical results generated through the GEE workflow.\n\n5.4.1 Visual Layers\nThe maps below showcase the results of the GLCM, PCA, and NDVI processing stages respectively.\n\n\n\nTexture Analysis (GLCM) - Identifying Urban Roughness\n\n\n\n\n\nPCA Results - Spectral Variance Mapping\n\n\n\n\n\nNDVI Analysis - Vegetation Density\n\n\n\n\n5.4.2 Numerical Mean Statistics (2023)\nThe following table summarizes the mean spectral environment of Delhi derived from the GEE reducer:\n\n\n\n\n\n\n\n\nBand / Index\nMean Value\nInterpretation\n\n\n\n\nNDVI\n0.3849\nModerate city-wide greenness.\n\n\nNIR (B5)\n0.2311\nTypical reflectance for mixed urban/vegetated cover.\n\n\nTemp (B10)\n307.28 K\nAverage surface temperature (~34.1°C).\n\n\nRed (B4)\n0.1024\nMean Red reflectance (Built-up and soil).\n\n\n\nBased on a threshold of \\(NDVI &gt; 0.4\\), the total green area was calculated: * Total Vegetation Area: \\(733,938,802.92 \\, m^2\\) (Approx. 733.9 km²)",
+    "crumbs": [
+      "Learning Diary",
+      "5. Google Earth Engine"
+    ]
+  },
+  {
+    "objectID": "week5.html#reflection",
+    "href": "week5.html#reflection",
+    "title": "5. Google Earth Engine",
+    "section": "5.5 Reflection",
+    "text": "5.5 Reflection\nHonestly, moving from the manual stuff in QGIS and SNAP over to Google Earth Engine has been such a huge upgrade for me. I have been following the CASA0023 lessons from the start at UCL, and it is just so cool to see how we went from basic sensor corrections to this high level cloud analytics. It feels like I finally have the right tools to do the work I actually want to do.\nI was thinking about my old projects when I was an undergrad and during some of my earlier work. Back then, my computer was always the problem. I had to make my study areas smaller or use lower quality data just because my laptop could not handle the processing. It was so frustrating to wait for a map to load only for it to crash. Sometimes I would leave it running overnight and still have nothing in the morning. With GEE, all those hardware bottlenecks are just gone. When I saw the results for Delhi today, it really clicked for me. The NDVI was 0.385 and the surface temp was about 34°C. These are not just random stats for a lab. They actually show the urban heat island effect in a real city. This is exactly the kind of stuff I want to work on for disaster risk reduction and making cities better. It makes the data feel much more “real” and urgent.\nI will say, the JavaScript console is a bit annoying sometimes. I am very used to using Python in Google Colab where I can check my mistakes line by line and see exactly where I messed up. GEE is more like a black box until you hit run, and then it just gives you an error message that sometimes makes no sense. But even with that, the speed you get is totally worth it. This workflow is basically going to be the main part of my thesis. I am looking at urban vulnerabilities, so being able to bridge my classroom work with real policy stuff is a big deal for me. It makes the whole MSc feel much more practical and like I’m actually preparing for a job.",
+    "crumbs": [
+      "Learning Diary",
+      "5. Google Earth Engine"
     ]
   }
 ]
