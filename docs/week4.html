@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Remote Sensing Diary</title>
+<title>4. Policy – My Remote Sensing Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week4.html">4. Policy</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -108,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -147,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week4.html" class="sidebar-item-text sidebar-link">
+  <a href="./week4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4. Policy</span></a>
   </div>
 </li>
@@ -163,18 +192,151 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-diary" id="toc-learning-diary" class="nav-link active" data-scroll-target="#learning-diary">Learning diary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">4.1 Summary</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">4.2 Application</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">4.2.1 Data</a></li>
+  <li><a href="#addressing-policy-challenge" id="toc-addressing-policy-challenge" class="nav-link" data-scroll-target="#addressing-policy-challenge">4.2.2 Addressing Policy Challenge</a></li>
+  <li><a href="#limitations-and-integrated-approaches" id="toc-limitations-and-integrated-approaches" class="nav-link" data-scroll-target="#limitations-and-integrated-approaches">4.2.3 Limitations and Integrated Approaches</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">4.3 Reflection</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week4.html">4. Policy</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">4. Policy</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="learning-diary" class="level1">
-<h1>Learning diary</h1>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This section looks at <strong>Melbourne, Australia</strong> as a case study, focusing on the <a href="https://www.melbourne.vic.gov.au/community/greening-the-city/urban-forest/Pages/urban-forest-strategy.aspx">Urban Forest Strategy 2012–2032</a> and its goal to mitigate the Urban Heat Island (UHI) effect. Like NYC, Melbourne faces significant climate threats from extreme heatwaves, which are the leading cause of weather-related fatalities in Australia. The city utilizes remote sensing to bridge the gap between high-level strategic goals and localized planting interventions.</p>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">4.1 Summary</h2>
+<p>The <strong>Urban Forest Strategy: Making a Resilient City</strong> is a long-term strategic plan aimed at cooling the city’s temperatures by <span class="math inline">\(4^\circ\text{C}\)</span>. It recognizes that the UHI effect is driven by dense urban forms and a lack of canopy cover, particularly in industrial and high-density residential precincts.</p>
+<div id="fig-melbourne-plan" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-melbourne-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="melbourne-infographic.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-melbourne-plan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <strong>Figure 4.1</strong>: Melbourne Urban Forest Infographic: Benefits and Targets. Source: <a href="https://mvga-prod-files.s3.ap-southeast-4.amazonaws.com/public/2024-07/urban-forest-infographic.pdf">City of Melbourne (2024)</a>
+</figcaption>
+</figure>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Urban Forest Strategy Objectives</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1. <strong>Increase Canopy Cover:</strong> Double the public realm canopy from 22% to 40% by 2040.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. <strong>Increase Urban Forest Diversity:</strong> No more than 5% of one tree species to ensure resilience.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3. <strong>Improve Vegetation Health:</strong> Use data to ensure 90% of the forest is healthy by 2040.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4. <strong>Mitigate the Urban Heat Island Effect:</strong> Target the “hottest” 10% of the city for immediate action.</td>
+</tr>
+</tbody>
+</table>
+<p>The City of Melbourne identifies that heat risk is not distributed evenly. Using <a href="http://melbourneurbanforestvisual.com.au/">thermal mapping</a>, the city found that <span class="math inline">\(44\%\)</span> of the municipality shows a high “Surface Urban Heat Island” intensity. Similar to the NYC Heat Vulnerability Index, Melbourne focuses on “vulnerability hotspots” where high surface temperatures coincide with high concentrations of elderly residents or low-income households (<a href="https://www.planning.vic.gov.au/__data/assets/pdf_file/0032/655826/UHI-and-HVI2018_Report_v1.pdf">Sun et al.&nbsp;2019</a>).</p>
+</section>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">4.2 Application</h2>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">4.2.1 Data</h3>
+<p>Melbourne utilizes a multi-sensor approach to monitor the urban environment. Land Surface Temperature (LST) and vegetation indices are the primary metrics used to track policy success.</p>
+<ul>
+<li><strong>Landsat 8-9 (TIRS):</strong> Used for regional LST mapping and identifying long-term thermal trends across the metropolitan area.</li>
+<li><strong>Sentinel-2:</strong> High temporal resolution (5 days) used for monitoring vegetation health and “greenness” via NDVI.</li>
+<li><strong>LiDAR (Light Detection and Ranging):</strong> Used to create <a href="http://melbourneurbanforestvisual.com.au/">precise 3D maps</a> of tree canopy height and “Sky View Factor” (SVF).</li>
+<li><strong>Thermal Infrared (TIR) Aerial Surveys:</strong> High-resolution flyovers (sub-5m) that provide finer detail than satellites, allowing for the identification of heat on individual rooftops (<a href="https://watersensitivecities.org.au/wp-content/uploads/2016/07/Multiscale-assessment-urban-heating-Technical-Report.pdf">Coutts and Harris 2012</a>).</li>
+</ul>
+</section>
+<section id="addressing-policy-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="addressing-policy-challenge">4.2.2 Addressing Policy Challenge</h3>
+<p>The table below outlines how specific objectives of the Urban Forest Strategy are addressed through remotely sensed evidence.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Objectives</th>
+<th style="text-align: left;">Application</th>
+<th style="text-align: left;">Methodology</th>
+<th style="text-align: left;">Remotely Sensing Data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Mitigate UHI Effect</strong></td>
+<td style="text-align: left;">Identify “hotspots” lacking shade to prioritize precinct-level planting.</td>
+<td style="text-align: left;">Calculate LST from TIRS bands and correlate with canopy density (<a href="https://watersensitivecities.org.au/wp-content/uploads/2016/07/Multiscale-assessment-urban-heating-Technical-Report.pdf">Coutts and Harris 2012</a>).</td>
+<td style="text-align: left;">Landsat 8-9; LiDAR</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Increase Canopy Cover</strong></td>
+<td style="text-align: left;">Measure the year-on-year growth of the urban forest and canopy expansion.</td>
+<td style="text-align: left;">Object-based image analysis (OBIA) to classify tree crowns.</td>
+<td style="text-align: left;">LiDAR; Aerial Imagery</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Improve Vegetation Health</strong></td>
+<td style="text-align: left;">Detect early signs of drought stress in the urban forest to trigger irrigation.</td>
+<td style="text-align: left;">Calculate NDVI and EVI to monitor chlorophyll levels.</td>
+<td style="text-align: left;">Sentinel-2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Cooling the Public Realm</strong></td>
+<td style="text-align: left;">Evaluate the cooling performance of different tree species.</td>
+<td style="text-align: left;">Compare LST under different canopy types (<a href="https://www.researchgate.net/publication/278022541_Decision_principles_for_the_selection_and_placement_of_green_infrastructure_to_mitigate_urban_hotspots_and_heat_waves">Norton et al.&nbsp;2015</a>).</td>
+<td style="text-align: left;">ECOSTRESS; Landsat</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="limitations-and-integrated-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="limitations-and-integrated-approaches">4.2.3 Limitations and Integrated Approaches</h3>
+<p>A significant limitation identified in Melbourne is the difference between <strong>Surface Temperature</strong> (measured by satellite) and <strong>Air Temperature</strong> (experienced by humans). Remote sensing data can sometimes overestimate the cooling effect of grass compared to trees, as grass has high LST but low shading capability (<a href="https://www.planning.vic.gov.au/guides-and-resources/Data-spatial-and-insights/melbournes-vegetation-heat-and-land-use-data">Sun et al.&nbsp;2019</a>). To address this, Melbourne integrates satellite data with a network of <strong>ground-based micro-climate sensors</strong> to validate thermal models at the street level.</p>
+</section>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">4.3 Reflection</h2>
+<p>This case study highlights how spatial evidence can turn a “visionary” policy into a technical roadmap. Melbourne’s use of <strong>LiDAR</strong> provides a structural dimension that the NYC example lacks; it allows planners to see not just <em>where</em> the heat is, but <em>how</em> the 3D shape of the city contributes to it.</p>
+<p>A key insight is the importance of <strong>data transparency</strong>. By making this remote sensing data available through the <a href="http://melbourneurbanforestvisual.com.au/">Urban Forest Visual</a> platform, the city allows citizens to interact with the data, fostering community support for climate action.</p>
+<p>However, like NYC, a remaining challenge is the “implementation gap.” While remote sensing can tell us exactly where to plant a tree, it cannot navigate the subterranean infrastructure (pipes, cables) that often prevents planting in the densest, hottest areas. Ultimately, remote sensing is a powerful diagnostic tool, but its success depends on its integration into the daily workflows of urban designers and engineers (<a href="https://www.researchgate.net/publication/333551082_Impacts_of_future_urban_expansion_on_urban_heat_island_effects_during_heatwave_events_in_the_city_of_Melbourne_in_southeast_Australia">Imran et al.&nbsp;2019</a>).</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>City of Melbourne. 2012. <em>Urban Forest Strategy: Making a Great City Greener 2012–2032</em>. Melbourne: City of Melbourne. <a href="https://www.melbourne.vic.gov.au/community/greening-the-city/urban-forest/Pages/urban-forest-strategy.aspx">https://www.melbourne.vic.gov.au/community/greening-the-city/urban-forest/Pages/urban-forest-strategy.aspx</a>.</p>
+<p>City of Melbourne. 2024. <em>Urban Forest Strategy Infographic</em>. <a href="https://mvga-prod-files.s3.ap-southeast-4.amazonaws.com/public/2024-07/urban-forest-infographic.pdf">https://mvga-prod-files.s3.ap-southeast-4.amazonaws.com/public/2024-07/urban-forest-infographic.pdf</a>.</p>
+<p>Coutts, Andrew M., and Jason Harris. 2012. <em>A Multi-Scale Assessment of Urban Heating in Melbourne During an Extreme Heat Event</em>. Technical Report. Melbourne: Monash University and City of Melbourne. <a href="https://watersensitivecities.org.au/wp-content/uploads/2016/07/Multiscale-assessment-urban-heating-Technical-Report.pdf">https://watersensitivecities.org.au/wp-content/uploads/2016/07/Multiscale-assessment-urban-heating-Technical-Report.pdf</a>.</p>
+<p>Imran, Hosen M., Jatin Kala, Anne W. M. Ng, and S. Muthukumaran. 2019. “Impacts of Future Urban Expansion on Urban Heat Island Effects During Heatwave Events in the City of Melbourne in Southeast Australia.” <em>Quarterly Journal of the Royal Meteorological Society</em> 145 (722): 2586–2602. <a href="https://doi.org/10.1002/qj.3580">https://doi.org/10.1002/qj.3580</a>.</p>
+<p>Norton, Briony A., Andrew M. Coutts, Stephen J. Livesley, Richard J. Harris, Margaret M. Hunter, and Nicholas S. G. Williams. 2015. “Decision Principles for the Selection and Placement of Green Infrastructure to Mitigate Urban Hotspots and Heat Waves.” <em>Ecosystem Services</em> 12: 61–72. <a href="https://doi.org/10.1016/j.ecoser.2014.11.012">https://doi.org/10.1016/j.ecoser.2014.11.012</a>.</p>
+<p>Sun, Chuanglin, Joe Hurley, and Marco Amati. 2019. <em>Urban Vegetation, Urban Heat Islands and Heat Vulnerability Assessment in Melbourne, 2018</em>. Clean Air and Urban Landscapes Hub. <a href="https://www.planning.vic.gov.au/__data/assets/pdf_file/0032/655826/UHI-and-HVI2018_Report_v1.pdf">https://www.planning.vic.gov.au/__data/assets/pdf_file/0032/655826/UHI-and-HVI2018_Report_v1.pdf</a>.</p>
 
 
 </section>
