@@ -54,7 +54,7 @@ Below are the results showing how the two models classified the same area.
 
 After running both models on the Shenzhen study area, I can see why one is often preferred over the other.
 
-### 6.5 Analysis Table
+## 6.5 Analysis Table
 
 | Model | **Strengths** | **Weaknesses** | **How to Make Better** |
 |:---|:---|:---|:---|
@@ -63,7 +63,7 @@ After running both models on the Shenzhen study area, I can see why one is often
 
 ---
 
-### 6.6 Application
+## 6.6 Application
 
 Machine learning models have become the go-to tool for tracking how cities grow and change over time. Using Google Earth Engine, we can run "Land Use and Land Cover Change" (LULCC) analysis to monitor urban sprawl or environmental health much faster than traditional methods. However, one of the biggest lessons I learned this week is that simply picking a "fancy" algorithm like Random Forest isn't enough. 
 

@@ -163,6 +163,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">6. Classification I</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Classification II</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -190,8 +196,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#cart-classification" id="toc-cart-classification" class="nav-link" data-scroll-target="#cart-classification">CART Classification</a></li>
   <li><a href="#random-forest-classification" id="toc-random-forest-classification" class="nav-link" data-scroll-target="#random-forest-classification">Random Forest Classification</a></li>
+  </ul></li>
   <li><a href="#analysis-table" id="toc-analysis-table" class="nav-link" data-scroll-target="#analysis-table">6.5 Analysis Table</a></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">6.6 Application</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">6.6 Application</a>
+  <ul class="collapse">
   <li><a href="#case-study-urban-expansion-and-resource-management" id="toc-case-study-urban-expansion-and-resource-management" class="nav-link" data-scroll-target="#case-study-urban-expansion-and-resource-management">Case Study: Urban Expansion and Resource Management</a></li>
   <li><a href="#case-study-explaining-urban-sprawl-with-cart" id="toc-case-study-explaining-urban-sprawl-with-cart" class="nav-link" data-scroll-target="#case-study-explaining-urban-sprawl-with-cart">Case Study: Explaining Urban Sprawl with CART</a></li>
   </ul></li>
@@ -302,8 +310,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>After running both models on the Shenzhen study area, I can see why one is often preferred over the other.</p>
 </section>
-<section id="analysis-table" class="level3">
-<h3 class="anchored" data-anchor-id="analysis-table">6.5 Analysis Table</h3>
+</section>
+<section id="analysis-table" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-table">6.5 Analysis Table</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -336,12 +345,11 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <hr>
 </section>
-<section id="application" class="level3">
-<h3 class="anchored" data-anchor-id="application">6.6 Application</h3>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">6.6 Application</h2>
 <p>Machine learning models have become the go-to tool for tracking how cities grow and change over time. Using Google Earth Engine, we can run “Land Use and Land Cover Change” (LULCC) analysis to monitor urban sprawl or environmental health much faster than traditional methods. However, one of the biggest lessons I learned this week is that simply picking a “fancy” algorithm like Random Forest isn’t enough.</p>
 <p>The quality of your map depends heavily on the “features” you feed into the computer. A study by <a href="https://doi.org/10.3390/rs12142270">Phiri et al.&nbsp;(2020)</a> found that while Random Forest is incredibly powerful, its performance really jumps when you add more than just basic spectral bands. By incorporating things like vegetation indices (NDVI) and water indices, the model gets much better at distinguishing between tricky surfaces that look similar, like wet soil and dark pavement.</p>
 <p>In addition to basic land cover mapping, CART and Random Forest are used for more specific urban challenges.</p>
-</section>
 <section id="case-study-urban-expansion-and-resource-management" class="level3">
 <h3 class="anchored" data-anchor-id="case-study-urban-expansion-and-resource-management">Case Study: Urban Expansion and Resource Management</h3>
 <p>This is super relevant for urban planning. <a href="https://doi.org/10.3390/rs12142270">Phiri et al.&nbsp;(2020)</a> showed how these classifiers are used to monitor rapid urban growth in areas where local data might be missing. By using Random Forest in the cloud, researchers can map out “impervious surfaces” (like concrete and roads) to see how much natural land is being lost.</p>
