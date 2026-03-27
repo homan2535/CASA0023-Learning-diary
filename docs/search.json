@@ -1,5 +1,49 @@
 [
   {
+    "objectID": "week8.html",
+    "href": "week8.html",
+    "title": "8. Temperature",
+    "section": "",
+    "text": "This week’s learning made me see how tricky it is to get Land Surface Temperature (LST) maps from satellite images. Instead of using the course’s example cities, I worked only on Hong Kong to see how heat works in my own city, with its tall buildings, busy harbour, and green hills. LST is not a simple reading—it is a multi-stage product derived from thermal infrared bands. The process starts with raw Digital Numbers (DN) which are converted into radiance, then Brightness Temperature (\\(T_B\\)). To reach the final LST, I corrected for Land Surface Emissivity (\\(\\epsilon\\)) using NDVI as a proxy. This is vital for Hong Kong because the transition from the concrete canyons of Kowloon to the lush New Territories requires vastly different emissivity values; getting this wrong would completely mix up my hot and cool spots.\nMy initial Landsat map (Figure 1) provided 30m detail, showing clear heat islands in busy areas contrasted against the sea. However, because a single snapshot can be misleading due to weather anomalies, I generated “LST Mean” products. Figures 2 and 3 show the lowest 10% and 50% of temperatures across the territory. These aggregated maps reveal that red-hot areas in Sham Shui Po, Mong Kok, and Kwun Tong align perfectly with low “Sky View Factors,” where heat is trapped by dense architecture. This data has immediate applications for Urban Design; planners can use these maps for Air Ventilation Assessments (AVA) to ensure new skyscrapers don’t block the sea breezes that flush out this trapped heat.\n\n\n\n\n\n\nFigure 1: Raw single-day Land Surface Temperature (LST) Map of Hong Kong.\n\n\n\n\n\n\n\n\n\nFigure 2: Aggregated Mean LST Map of Hong Kong (Lowest 10%).\n\n\n\n\n\n\n\n\n\nFigure 3: Alternative Mean LST aggregation (Lowest 50%).\n\n\n\n\n\n\n\n\n\nFigure 4: MODIS LST Time Series for Hong Kong (Summer 2022)\n\n\n\n\n\n\n\n\n\nFigure 5: Coarse 1km resolution MODIS LST data.\n\n\n\nThe biggest thing I learned is that more data is not always better. I realized there is a big trade-off between scale and how often we get images. MODIS gives a photo every day, which sounds useful, but each pixel covers a very large area—about 1 km. This resolution is too rough for a crowded city like Hong Kong. It mixes the hot industrial areas with the cooler parks nearby, making it hard to see what is happening on each street. For real city planning, the 30 m detail from Landsat is much more helpful, even if we get fewer pictures.\nI also learned that atmospheric correction is the weakest step in the process. Because Hong Kong is very humid and close to the sea, the salt and moisture in the air can make the temperature data less accurate by a few degrees. As a future data analyst, I now read these maps more carefully. I always ask: is this really a hot building, or just an error caused by humid air? The cool colors over Sai Kung and Lantau show that our Country Parks act as the lungs of the city. This kind of visual proof is a strong way to explain why we should protect our green areas from new development.",
+    "crumbs": [
+      "Learning Diary",
+      "8. Temperature"
+    ]
+  },
+  {
+    "objectID": "week8.html#summary",
+    "href": "week8.html#summary",
+    "title": "8. Temperature",
+    "section": "",
+    "text": "This week’s learning made me see how tricky it is to get Land Surface Temperature (LST) maps from satellite images. Instead of using the course’s example cities, I worked only on Hong Kong to see how heat works in my own city, with its tall buildings, busy harbour, and green hills. LST is not a simple reading—it is a multi-stage product derived from thermal infrared bands. The process starts with raw Digital Numbers (DN) which are converted into radiance, then Brightness Temperature (\\(T_B\\)). To reach the final LST, I corrected for Land Surface Emissivity (\\(\\epsilon\\)) using NDVI as a proxy. This is vital for Hong Kong because the transition from the concrete canyons of Kowloon to the lush New Territories requires vastly different emissivity values; getting this wrong would completely mix up my hot and cool spots.\nMy initial Landsat map (Figure 1) provided 30m detail, showing clear heat islands in busy areas contrasted against the sea. However, because a single snapshot can be misleading due to weather anomalies, I generated “LST Mean” products. Figures 2 and 3 show the lowest 10% and 50% of temperatures across the territory. These aggregated maps reveal that red-hot areas in Sham Shui Po, Mong Kok, and Kwun Tong align perfectly with low “Sky View Factors,” where heat is trapped by dense architecture. This data has immediate applications for Urban Design; planners can use these maps for Air Ventilation Assessments (AVA) to ensure new skyscrapers don’t block the sea breezes that flush out this trapped heat.\n\n\n\n\n\n\nFigure 1: Raw single-day Land Surface Temperature (LST) Map of Hong Kong.\n\n\n\n\n\n\n\n\n\nFigure 2: Aggregated Mean LST Map of Hong Kong (Lowest 10%).\n\n\n\n\n\n\n\n\n\nFigure 3: Alternative Mean LST aggregation (Lowest 50%).\n\n\n\n\n\n\n\n\n\nFigure 4: MODIS LST Time Series for Hong Kong (Summer 2022)\n\n\n\n\n\n\n\n\n\nFigure 5: Coarse 1km resolution MODIS LST data.\n\n\n\nThe biggest thing I learned is that more data is not always better. I realized there is a big trade-off between scale and how often we get images. MODIS gives a photo every day, which sounds useful, but each pixel covers a very large area—about 1 km. This resolution is too rough for a crowded city like Hong Kong. It mixes the hot industrial areas with the cooler parks nearby, making it hard to see what is happening on each street. For real city planning, the 30 m detail from Landsat is much more helpful, even if we get fewer pictures.\nI also learned that atmospheric correction is the weakest step in the process. Because Hong Kong is very humid and close to the sea, the salt and moisture in the air can make the temperature data less accurate by a few degrees. As a future data analyst, I now read these maps more carefully. I always ask: is this really a hot building, or just an error caused by humid air? The cool colors over Sai Kung and Lantau show that our Country Parks act as the lungs of the city. This kind of visual proof is a strong way to explain why we should protect our green areas from new development.",
+    "crumbs": [
+      "Learning Diary",
+      "8. Temperature"
+    ]
+  },
+  {
+    "objectID": "week8.html#applications",
+    "href": "week8.html#applications",
+    "title": "8. Temperature",
+    "section": "8.2. Applications",
+    "text": "8.2. Applications\ni also looked at some papers to see how this heat stuff actually turns into real city rules. Stone et al. (2021) wrote about how cities are great at making these maps but then they don’t actually do anything with them. they call it the “planning-implementation gap.” basically, we make the maps but then we don’t change the building laws. for HK, this is a big deal because of our “wall-like buildings” that block all the air. we need to use these LST maps to force developers to leave “breezeways” in new districts like Kai Tak. if the map says a spot is too hot, the law should say “no more big towers here.” one limit of their paper is it’s mostly about US cities, so it doesn’t quite fit how vertical and tight HK is, but the main point about “acting on data” is definitely right.\nthen i read Wong et al. (1996) which is an older paper but still super useful for a place like HK. they found that putting plants on walls and roofs (landscaping) really helps cool down the building and saves electricity for AC. this is exactly what we need in the “red” hotspots i found in my maps. but the problem is, keeping plants alive in a city is hard and uses a lot of water, especially when it’s 35°C out. maybe in the future we can use machine learning to link my LST maps to automatic watering systems? that way we only water the “hot” buildings when they actually need it. it’s about balancing the green stuff with the actual budget of a city. we need to bridge the gap between “high-tech” data and “nature-based” solutions.",
+    "crumbs": [
+      "Learning Diary",
+      "8. Temperature"
+    ]
+  },
+  {
+    "objectID": "week8.html#reflection",
+    "href": "week8.html#reflection",
+    "title": "8. Temperature",
+    "section": "8.3. Reflection",
+    "text": "8.3. Reflection\nLooking back on this project, I have realized that remote sensing is much more complicated than I first thought. When I started, I thought that getting temperature data from a satellite would be as easy as taking a photo with my phone. However, after working with the data for Hong Kong, I now understand that there are many technical steps and choices that can change the final result.\nThe most important lesson I learned is the trade-off between scale and frequency. Before this week, I always believed that having more data was better. But comparing my MODIS map to my Landsat map changed my mind. Even though MODIS gives us an image every day, its 1km resolution is just too blurry for a crowded place like Hong Kong. In a city where a tiny park sits right next to a massive skyscraper, a 1km pixel mixes those two temperatures together. This makes the data almost useless for street-level planning. For my future work as an urban analyst, I now know that high-resolution data like Landsat is “non-negotiable” if I want to help people living in specific neighborhoods.\nI also found the issue of atmospheric correction very interesting. Since Hong Kong is a coastal city with high humidity, the moisture in the air can easily mess up the satellite readings. This taught me to be more critical. Instead of just looking at a “hot” red spot and believing it immediately, I now ask if the heat is real or if it is just an error caused by the humid air. Finally, seeing the maps made me feel more protective of our green spaces. The cool blue colors over the Country Parks compared to the bright red over Kowloon really prove that these areas are the “lungs” of our city. In the future, I want to explore nighttime data because heat trapped in concrete after dark is very dangerous for people in subdivided flats. I hope my research can eventually help the government make better laws to keep Hong Kong cool and livable.",
+    "crumbs": [
+      "Learning Diary",
+      "8. Temperature"
+    ]
+  },
+  {
     "objectID": "week6.html",
     "href": "week6.html",
     "title": "6. Classification I",
@@ -49,6 +93,28 @@
     "title": "6. Classification I",
     "section": "6.1.4 Visual Analysis",
     "text": "6.1.4 Visual Analysis\nBelow are the results showing how the two models classified the same area.\n\nCART Classification\n\n\n\nCART Output Map\n\n\n\n\nRandom Forest Classification\n\n\n\nRandom Forest Output Map\n\n\nAfter running both models on the Shenzhen study area, I can see why one is often preferred over the other.",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
+    "objectID": "week6.html#analysis-table",
+    "href": "week6.html#analysis-table",
+    "title": "6. Classification I",
+    "section": "6.1.5 Analysis Table",
+    "text": "6.1.5 Analysis Table\n\n\n\n\n\n\n\n\n\nModel\nStrengths\nWeaknesses\nHow to Make Better\n\n\n\n\nCART\nEasy to understand, runs very fast even on detailed maps.\nGets confused easily by small data changes. Creates noisy, spotty maps.\nUse OBIA first to group similar pixels together before classifying.\n\n\nRandom Forest\nMuch more accurate with cleaner maps. Combines many trees for reliable results.\nNeeds lots of computer power and takes longer to run.\nNew speed-up methods make it work faster on huge global maps.",
+    "crumbs": [
+      "Learning Diary",
+      "6. Classification I"
+    ]
+  },
+  {
+    "objectID": "week6.html#application",
+    "href": "week6.html#application",
+    "title": "6. Classification I",
+    "section": "6.2 Application",
+    "text": "6.2 Application\nIn this section, I apply the theoretical concepts from the study by Pal (2005) to my own classification results for the Shenzhen and Hong Kong regions. Pal’s research specifically compares the performance of a single decision tree (CART) against the Random Forest (RF) ensemble method, which matches the “Battle of the Algorithms” I conducted this week.\nAccording to Pal (2005), one of the primary advantages of Random Forest is its ability to achieve higher classification accuracy compared to a single decision tree. My observations in Section 6.3 align with this; I found that the Random Forest validation accuracy was higher than CART’s. Pal explains that because RF is an “ensemble” model—meaning it uses a “committee” of many trees—it reduces the risk of overfitting. In my study, CART tended to “memorize” the specific training points too closely, making it “brittle” when classifying new areas. RF, however, used random subsets of data to create many trees, allowing it to generalize much better across the complex urban fabric of the Pearl River Delta.\n\n6.2.1 Handling Noise and Complex Classes\nMy visual analysis in Section 6.4 showed that the CART map had more “salt and pepper” noise, while the RF map appeared more solid. Pal (2005) supports this by stating that Random Forest is more robust when dealing with “noisy” data or complex land cover types. For instance, both my models struggled to distinguish between “Urban” concrete and “Bare Earth.” Pal’s research suggests that while a single tree might get confused by these similar spectral signatures, the voting system in a Random Forest helps to “average out” these errors. This explains why my RF output was cleaner and more reliable for identifying the dense urban structures in Shenzhen.\n\n\n6.2.2 Processing Requirements\nFinally, the author mentions that while RF is more accurate, it requires more computational power because it has to generate and manage many trees (often 100 or more). I noticed this during my practical work: CART ran very fast, but Random Forest took longer to process the detailed satellite tiles. However, as Pal concludes, the significant increase in accuracy and the reduction in visual noise make Random Forest the superior choice for large-scale urban mapping projects.",
     "crumbs": [
       "Learning Diary",
       "6. Classification I"
@@ -139,16 +205,6 @@
     "text": "References"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Learning diary",
-    "section": "",
-    "text": "Learning diary",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
     "objectID": "intro.html",
     "href": "intro.html",
     "title": "About myself",
@@ -237,6 +293,28 @@
     ]
   },
   {
+    "objectID": "week3.html#ndvi",
+    "href": "week3.html#ndvi",
+    "title": "3. Corrections",
+    "section": "3.2.1 NDVI",
+    "text": "3.2.1 NDVI\nThe Normalized Difference Vegetation Index (NDVI) was calculated to identify healthy vegetation. In my output for Macau, high NDVI values are concentrated in Coloane and the hilly regions of Taipa.\nThis index is crucial for urban studies because vegetation cover is often negatively correlated with the Urban Heat Island (UHI) effect. By mapping NDVI, we can identify which parts of Macau’s dense urban core lack green space.\n\n\n\n\n\n\nFigure 1: Macau NDVI Vegetation Index (March 2025)",
+    "crumbs": [
+      "Learning Diary",
+      "3. Corrections"
+    ]
+  },
+  {
+    "objectID": "week3.html#texture-analysis",
+    "href": "week3.html#texture-analysis",
+    "title": "3. Corrections",
+    "section": "3.2.2 Texture Analysis",
+    "text": "3.2.2 Texture Analysis\nSpectral data alone can sometimes struggle to distinguish between different types of man-made surfaces. Following the methodology of Kupidura (2019), I applied Texture Analysis using the Gray-Level Co-occurrence Matrix (GLCM) Contrast metric.\nThe results clearly show that the Macau Peninsula has very high texture values. This reflects a highly fragmented and dense urban morphology with narrow streets and old buildings. In contrast, the Cotai Strip shows more regular, geometric patterns.\n\n\n\n\n\n\nFigure 2: Macau GLCM Texture Contrast showing Urban Morphology\n\n\n\n\n3.2.3 Synthesis for Urban Science\nBy combining spectral information (NDVI) and spatial structure (Texture), we can quantify the level of urban development in Macau. For example, new reclamation zones show low values in both maps, indicating they are in the early stages of development. This integrated approach proves that combining these two methods is the most effective way to analyze complex urban environments.",
+    "crumbs": [
+      "Learning Diary",
+      "3. Corrections"
+    ]
+  },
+  {
     "objectID": "week3.html#reflection",
     "href": "week3.html#reflection",
     "title": "3. Corrections",
@@ -314,66 +392,11 @@
     ]
   },
   {
-    "objectID": "week6.html#analysis-table",
-    "href": "week6.html#analysis-table",
-    "title": "6. Classification I",
-    "section": "6.1.5 Analysis Table",
-    "text": "6.1.5 Analysis Table\n\n\n\n\n\n\n\n\n\nModel\nStrengths\nWeaknesses\nHow to Make Better\n\n\n\n\nCART\nEasy to understand, runs very fast even on detailed maps.\nGets confused easily by small data changes. Creates noisy, spotty maps.\nUse OBIA first to group similar pixels together before classifying.\n\n\nRandom Forest\nMuch more accurate with cleaner maps. Combines many trees for reliable results.\nNeeds lots of computer power and takes longer to run.\nNew speed-up methods make it work faster on huge global maps.",
-    "crumbs": [
-      "Learning Diary",
-      "6. Classification I"
-    ]
-  },
-  {
-    "objectID": "week6.html#application",
-    "href": "week6.html#application",
-    "title": "6. Classification I",
-    "section": "6.2 Application",
-    "text": "6.2 Application\nIn this section, I apply the theoretical concepts from the study by Pal (2005) to my own classification results for the Shenzhen and Hong Kong regions. Pal’s research specifically compares the performance of a single decision tree (CART) against the Random Forest (RF) ensemble method, which matches the “Battle of the Algorithms” I conducted this week.\nAccording to Pal (2005), one of the primary advantages of Random Forest is its ability to achieve higher classification accuracy compared to a single decision tree. My observations in Section 6.3 align with this; I found that the Random Forest validation accuracy was higher than CART’s. Pal explains that because RF is an “ensemble” model—meaning it uses a “committee” of many trees—it reduces the risk of overfitting. In my study, CART tended to “memorize” the specific training points too closely, making it “brittle” when classifying new areas. RF, however, used random subsets of data to create many trees, allowing it to generalize much better across the complex urban fabric of the Pearl River Delta.\n\n6.2.1 Handling Noise and Complex Classes\nMy visual analysis in Section 6.4 showed that the CART map had more “salt and pepper” noise, while the RF map appeared more solid. Pal (2005) supports this by stating that Random Forest is more robust when dealing with “noisy” data or complex land cover types. For instance, both my models struggled to distinguish between “Urban” concrete and “Bare Earth.” Pal’s research suggests that while a single tree might get confused by these similar spectral signatures, the voting system in a Random Forest helps to “average out” these errors. This explains why my RF output was cleaner and more reliable for identifying the dense urban structures in Shenzhen.\n\n\n6.2.2 Processing Requirements\nFinally, the author mentions that while RF is more accurate, it requires more computational power because it has to generate and manage many trees (often 100 or more). I noticed this during my practical work: CART ran very fast, but Random Forest took longer to process the detailed satellite tiles. However, as Pal concludes, the significant increase in accuracy and the reduction in visual noise make Random Forest the superior choice for large-scale urban mapping projects.",
-    "crumbs": [
-      "Learning Diary",
-      "6. Classification I"
-    ]
-  },
-  {
     "objectID": "week7.html",
     "href": "week7.html",
     "title": "7. Classification II",
     "section": "",
     "text": "The core of this session focuses on the critical transition from traditional “hard” classification to more advanced methods that better represent the complexity of the Earth’s surface. As Andrew Maclachlan highlights, the primary limitation of traditional remote sensing is the “mixed pixel” problem. In a 30m Landsat pixel, it is rare to find a single, homogenous land cover. Instead, pixels are usually a cocktail of different materials. To address this, we explored Sub-pixel Classification, specifically Spectral Mixture Analysis (SMA). This method operates on the logic that a pixel’s reflectance is a linear combination of the reflectance of its components, known as “endmembers.” By defining spectrally pure signatures for categories like urban, vegetation, and water, we can use the unmix() function in Google Earth Engine (GEE) to calculate the exact percentage of each material within every pixel. This provides a “fractional” view of the landscape, which is far more accurate for complex environments where urban fabric and nature are tightly interwoven.\nThe second half of the module shifted toward Object-Based Image Analysis (OBIA). Unlike pixel-based methods that treat every 30m square as an independent data point, OBIA recognizes that land cover exists as meaningful spatial “objects.” We utilized the Simple Non-Iterative Clustering (SNIC) algorithm to group pixels into “superpixels.” This algorithm starts with a seed grid and grows clusters based on spectral similarity and spatial proximity. This process is transformative because it allows us to calculate “object properties” that aren’t available at the pixel level, such as the standard deviation of color within a cluster, the shape’s compactness, or its area-to-perimeter ratio. By aggregating pixels into these clusters, we can effectively eliminate “salt-and-pepper” noise—the speckled errors that plague traditional maps. The session concluded by discussing the inherent difficulty of accuracy assessment for these methods. While hard classification uses a simple confusion matrix, validating a sub-pixel fraction requires much more intensive processes, such as digitizing high-resolution “fishnet” grids to compare proportions, highlighting the trade-off between detail and the ease of validation.",
-    "crumbs": [
-      "Learning Diary",
-      "7. Classification II"
-    ]
-  },
-  {
-    "objectID": "week7.html#summary-moving-beyond-the-pixel",
-    "href": "week7.html#summary-moving-beyond-the-pixel",
-    "title": "7. Classification II",
-    "section": "",
-    "text": "The core of this session focuses on the critical transition from traditional “hard” classification to more advanced methods that better represent the complexity of the Earth’s surface. As Andrew Maclachlan highlights, the primary limitation of traditional remote sensing is the “mixed pixel” problem. In a 30m Landsat pixel, it is rare to find a single, homogenous land cover. Instead, pixels are usually a cocktail of different materials. To address this, we explored Sub-pixel Classification, specifically Spectral Mixture Analysis (SMA). This method operates on the logic that a pixel’s reflectance is a linear combination of the reflectance of its components, known as “endmembers.” By defining spectrally pure signatures for categories like urban, vegetation, and water, we can use the unmix() function in Google Earth Engine (GEE) to calculate the exact percentage of each material within every pixel. This provides a “fractional” view of the landscape, which is far more accurate for complex environments where urban fabric and nature are tightly interwoven.\nThe second half of the module shifted toward Object-Based Image Analysis (OBIA). Unlike pixel-based methods that treat every 30m square as an independent data point, OBIA recognizes that land cover exists as meaningful spatial “objects.” We utilized the Simple Non-Iterative Clustering (SNIC) algorithm to group pixels into “superpixels.” This algorithm starts with a seed grid and grows clusters based on spectral similarity and spatial proximity. This process is transformative because it allows us to calculate “object properties” that aren’t available at the pixel level, such as the standard deviation of color within a cluster, the shape’s compactness, or its area-to-perimeter ratio. By aggregating pixels into these clusters, we can effectively eliminate “salt-and-pepper” noise—the speckled errors that plague traditional maps. The session concluded by discussing the inherent difficulty of accuracy assessment for these methods. While hard classification uses a simple confusion matrix, validating a sub-pixel fraction requires much more intensive processes, such as digitizing high-resolution “fishnet” grids to compare proportions, highlighting the trade-off between detail and the ease of validation.",
-    "crumbs": [
-      "Learning Diary",
-      "7. Classification II"
-    ]
-  },
-  {
-    "objectID": "week7.html#applications-and-interpretation-dar-es-salaam-case-study",
-    "href": "week7.html#applications-and-interpretation-dar-es-salaam-case-study",
-    "title": "7. Classification II",
-    "section": "2. Applications and Interpretation: Dar-es-Salaam Case Study",
-    "text": "2. Applications and Interpretation: Dar-es-Salaam Case Study\nApplying these advanced methods to Dar-es-Salaam provides a stark contrast in how we visualize urban growth and environmental health. In my sub-pixel analysis, the result is incredibly high-resolution but appears “noisy” to the untrained eye.\n\n\n\nSub-pixel Analysis for Dar-es-Salaam\n\n\nThis granularity is actually its strength. In Dar-es-Salaam, the urban morphology is dominated by informal settlements and sandy soils. Traditional classification often fails here because sand and concrete have very similar spectral signatures, leading to “spectral confusion.” However, the sub-pixel approach reveals the “gray areas”—literally. It shows where a pixel is 40% urban and 60% bare soil, or where small backyard gardens contribute to a vegetation fraction that would otherwise be lost in a “hard” urban classification. This is vital for calculating the Urban Heat Island effect or urban runoff, where the exact amount of permeable vs. impermeable surface matters more than a simple “urban” label. By using constrained unmixing, I ensured the fractions summed to 1.0, providing a statistically sound representation of the city’s composition.\nIn contrast, my OBIA output looks like a professional cartographic product. By using the SNIC algorithm, I grouped the chaotic pixels of Dar-es-Salaam into logical, homogeneous objects.\n\n\n\nObject-Based Image Analysis for Dar-es-Salaam\n\n\nThe resulting map features solid “blobs” of color that clearly delineate the city’s structural zones. The red zones represent the densely built-up urban core, while the deep green sections show the large forested areas on the city’s outskirts. This interpretation is highly useful for regional planning and zoning. For instance, the OBIA method allowed me to incorporate the standard deviation of NDVI as a band. This means the classifier could distinguish between a “flat” green object (like a lawn) and a “textured” green object (like a forest canopy), even if their average color was the same. While the sub-pixel map tells us what the city is made of (composition), the OBIA map tells us how the city is organized (structure). For a policy maker in Tanzania, the OBIA output is far more actionable for defining green belts or identifying sprawling informal developments that require infrastructure intervention, as it presents the city in a way that aligns with human-scale geography.",
-    "crumbs": [
-      "Learning Diary",
-      "7. Classification II"
-    ]
-  },
-  {
-    "objectID": "week7.html#personal-reflection",
-    "href": "week7.html#personal-reflection",
-    "title": "7. Classification II",
-    "section": "3. Personal Reflection",
-    "text": "3. Personal Reflection\nThis week’s practical was a significant turning point in my understanding of remote sensing. For a long time, I viewed satellite imagery as a collection of “truth squares”—the idea that a pixel was a definitive measurement of a single thing. Realizing that the 30-meter resolution of Landsat is essentially a human-imposed grid on a messy, overlapping world was a massive “Aha!” moment. Working with constrained unmixing was initially frustrating. The process of selecting “pure” endmembers feels like a heavy responsibility; if I pick a point that isn’t truly 100% forest, the entire model for the city of Dar-es-Salaam is skewed. It made me realize that even in the age of “Big Data” and AI, the “human-in-the-loop” remains the most critical factor. The quality of my output was entirely dependent on my subjective choice of training points, which is a humbling reminder of the bias inherent in geospatial analysis.\nFurthermore, I found the “visual logic” of OBIA and superpixels to be much more satisfying than pixel-crunching. There is something deeply intuitive about seeing an algorithm group pixels into shapes that look like real-world neighborhoods. However, this also brought up a sense of caution regarding the “Modifiable Areal Unit Problem” (MAUP). By choosing a specific “compactness” or “seed size” in the SNIC algorithm, I was essentially deciding the scale of reality. If I set the objects too large, I “smooth over” the lives and structures of people living in small informal settlements, effectively erasing them from the map in favor of a cleaner visual. It made me think about the ethical implications of “map cleaning”—at what point does removing “noise” become removing “truth”? Moving forward, I am eager to experiment with using sub-pixel fractions as an input for an object-based classifier. I believe the future of my work lies in this “hybrid” approach: using the math of sub-pixels to get the numbers right, but the logic of objects to make the results meaningful for people.",
     "crumbs": [
       "Learning Diary",
       "7. Classification II"
@@ -410,160 +433,6 @@
     "crumbs": [
       "Learning Diary",
       "7. Classification II"
-    ]
-  },
-  {
-    "objectID": "week8.html",
-    "href": "week8.html",
-    "title": "8. Temperature",
-    "section": "",
-    "text": "This week’s learning made me see how tricky it is to get Land Surface Temperature (LST) maps from satellite images. Instead of using the course’s example cities, I worked only on Hong Kong to see how heat works in my own city, with its tall buildings, busy harbour, and green hills. LST is not a simple reading—it is a multi-stage product derived from thermal infrared bands. The process starts with raw Digital Numbers (DN) which are converted into radiance, then Brightness Temperature (\\(T_B\\)). To reach the final LST, I corrected for Land Surface Emissivity (\\(\\epsilon\\)) using NDVI as a proxy. This is vital for Hong Kong because the transition from the concrete canyons of Kowloon to the lush New Territories requires vastly different emissivity values; getting this wrong would completely mix up my hot and cool spots.\nMy initial Landsat map (Figure 1) provided 30m detail, showing clear heat islands in busy areas contrasted against the sea. However, because a single snapshot can be misleading due to weather anomalies, I generated “LST Mean” products. Figures 2 and 3 show the lowest 10% and 50% of temperatures across the territory. These aggregated maps reveal that red-hot areas in Sham Shui Po, Mong Kok, and Kwun Tong align perfectly with low “Sky View Factors,” where heat is trapped by dense architecture. This data has immediate applications for Urban Design; planners can use these maps for Air Ventilation Assessments (AVA) to ensure new skyscrapers don’t block the sea breezes that flush out this trapped heat.\n\n\n\n\n\n\nFigure 1: Raw single-day Land Surface Temperature (LST) Map of Hong Kong.\n\n\n\n\n\n\n\n\n\nFigure 2: Aggregated Mean LST Map of Hong Kong (Lowest 10%).\n\n\n\n\n\n\n\n\n\nFigure 3: Alternative Mean LST aggregation (Lowest 50%).\n\n\n\n\n\n\n\n\n\nFigure 4: MODIS LST Time Series for Hong Kong (Summer 2022)\n\n\n\n\n\n\n\n\n\nFigure 5: Coarse 1km resolution MODIS LST data.\n\n\n\nThe biggest thing I learned is that more data is not always better. I realized there is a big trade-off between scale and how often we get images. MODIS gives a photo every day, which sounds useful, but each pixel covers a very large area—about 1 km. This resolution is too rough for a crowded city like Hong Kong. It mixes the hot industrial areas with the cooler parks nearby, making it hard to see what is happening on each street. For real city planning, the 30 m detail from Landsat is much more helpful, even if we get fewer pictures.\nI also learned that atmospheric correction is the weakest step in the process. Because Hong Kong is very humid and close to the sea, the salt and moisture in the air can make the temperature data less accurate by a few degrees. As a future data analyst, I now read these maps more carefully. I always ask: is this really a hot building, or just an error caused by humid air? The cool colors over Sai Kung and Lantau show that our Country Parks act as the lungs of the city. This kind of visual proof is a strong way to explain why we should protect our green areas from new development.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#summary",
-    "href": "week8.html#summary",
-    "title": "8. Temperature",
-    "section": "",
-    "text": "This week’s learning made me see how tricky it is to get Land Surface Temperature (LST) maps from satellite images. Instead of using the course’s example cities, I worked only on Hong Kong to see how heat works in my own city, with its tall buildings, busy harbour, and green hills. LST is not a simple reading—it is a multi-stage product derived from thermal infrared bands. The process starts with raw Digital Numbers (DN) which are converted into radiance, then Brightness Temperature (\\(T_B\\)). To reach the final LST, I corrected for Land Surface Emissivity (\\(\\epsilon\\)) using NDVI as a proxy. This is vital for Hong Kong because the transition from the concrete canyons of Kowloon to the lush New Territories requires vastly different emissivity values; getting this wrong would completely mix up my hot and cool spots.\nMy initial Landsat map (Figure 1) provided 30m detail, showing clear heat islands in busy areas contrasted against the sea. However, because a single snapshot can be misleading due to weather anomalies, I generated “LST Mean” products. Figures 2 and 3 show the lowest 10% and 50% of temperatures across the territory. These aggregated maps reveal that red-hot areas in Sham Shui Po, Mong Kok, and Kwun Tong align perfectly with low “Sky View Factors,” where heat is trapped by dense architecture. This data has immediate applications for Urban Design; planners can use these maps for Air Ventilation Assessments (AVA) to ensure new skyscrapers don’t block the sea breezes that flush out this trapped heat.\n\n\n\n\n\n\nFigure 1: Raw single-day Land Surface Temperature (LST) Map of Hong Kong.\n\n\n\n\n\n\n\n\n\nFigure 2: Aggregated Mean LST Map of Hong Kong (Lowest 10%).\n\n\n\n\n\n\n\n\n\nFigure 3: Alternative Mean LST aggregation (Lowest 50%).\n\n\n\n\n\n\n\n\n\nFigure 4: MODIS LST Time Series for Hong Kong (Summer 2022)\n\n\n\n\n\n\n\n\n\nFigure 5: Coarse 1km resolution MODIS LST data.\n\n\n\nThe biggest thing I learned is that more data is not always better. I realized there is a big trade-off between scale and how often we get images. MODIS gives a photo every day, which sounds useful, but each pixel covers a very large area—about 1 km. This resolution is too rough for a crowded city like Hong Kong. It mixes the hot industrial areas with the cooler parks nearby, making it hard to see what is happening on each street. For real city planning, the 30 m detail from Landsat is much more helpful, even if we get fewer pictures.\nI also learned that atmospheric correction is the weakest step in the process. Because Hong Kong is very humid and close to the sea, the salt and moisture in the air can make the temperature data less accurate by a few degrees. As a future data analyst, I now read these maps more carefully. I always ask: is this really a hot building, or just an error caused by humid air? The cool colors over Sai Kung and Lantau show that our Country Parks act as the lungs of the city. This kind of visual proof is a strong way to explain why we should protect our green areas from new development.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#applications",
-    "href": "week8.html#applications",
-    "title": "8. Temperature",
-    "section": "8.2. Applications",
-    "text": "8.2. Applications\ni also looked at some papers to see how this heat stuff actually turns into real city rules. Stone et al. (2021) wrote about how cities are great at making these maps but then they don’t actually do anything with them. they call it the “planning-implementation gap.” basically, we make the maps but then we don’t change the building laws. for HK, this is a big deal because of our “wall-like buildings” that block all the air. we need to use these LST maps to force developers to leave “breezeways” in new districts like Kai Tak. if the map says a spot is too hot, the law should say “no more big towers here.” one limit of their paper is it’s mostly about US cities, so it doesn’t quite fit how vertical and tight HK is, but the main point about “acting on data” is definitely right.\nthen i read Wong et al. (1996) which is an older paper but still super useful for a place like HK. they found that putting plants on walls and roofs (landscaping) really helps cool down the building and saves electricity for AC. this is exactly what we need in the “red” hotspots i found in my maps. but the problem is, keeping plants alive in a city is hard and uses a lot of water, especially when it’s 35°C out. maybe in the future we can use machine learning to link my LST maps to automatic watering systems? that way we only water the “hot” buildings when they actually need it. it’s about balancing the green stuff with the actual budget of a city. we need to bridge the gap between “high-tech” data and “nature-based” solutions.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#reflection",
-    "href": "week8.html#reflection",
-    "title": "8. Temperature",
-    "section": "8.3. Reflection",
-    "text": "8.3. Reflection\nLooking back on this project, I have realized that remote sensing is much more complicated than I first thought. When I started, I thought that getting temperature data from a satellite would be as easy as taking a photo with my phone. However, after working with the data for Hong Kong, I now understand that there are many technical steps and choices that can change the final result.\nThe most important lesson I learned is the trade-off between scale and frequency. Before this week, I always believed that having more data was better. But comparing my MODIS map to my Landsat map changed my mind. Even though MODIS gives us an image every day, its 1km resolution is just too blurry for a crowded place like Hong Kong. In a city where a tiny park sits right next to a massive skyscraper, a 1km pixel mixes those two temperatures together. This makes the data almost useless for street-level planning. For my future work as an urban analyst, I now know that high-resolution data like Landsat is “non-negotiable” if I want to help people living in specific neighborhoods.\nI also found the issue of atmospheric correction very interesting. Since Hong Kong is a coastal city with high humidity, the moisture in the air can easily mess up the satellite readings. This taught me to be more critical. Instead of just looking at a “hot” red spot and believing it immediately, I now ask if the heat is real or if it is just an error caused by the humid air. Finally, seeing the maps made me feel more protective of our green spaces. The cool blue colors over the Country Parks compared to the bright red over Kowloon really prove that these areas are the “lungs” of our city. In the future, I want to explore nighttime data because heat trapped in concrete after dark is very dangerous for people in subdivided flats. I hope my research can eventually help the government make better laws to keep Hong Kong cool and livable.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#summary-of-concepts-and-methodology",
-    "href": "week8.html#summary-of-concepts-and-methodology",
-    "title": "8. Temperature",
-    "section": "",
-    "text": "This week’s learning focused on the retrieval and analysis of Land Surface Temperature (LST) using remote sensing data, specifically comparing the trade-offs between different satellite platforms like Landsat and MODIS. The core of the study revolves around the Urban Heat Island (UHI) effect—a phenomenon where urban areas experience significantly higher temperatures than their rural surroundings due to anthropogenic heat, building materials with high thermal mass, and a lack of vegetation.\nFrom a technical perspective, the process of deriving LST is not a simple direct measurement. It involves a multi-step conversion process. First, we must convert the raw Digital Numbers (DN) captured by the thermal infrared sensors into Top-of-Atmosphere (TOA) radiance. From there, we calculate the Brightness Temperature. However, to reach the actual LST, we must account for land surface emissivity (\\(\\epsilon\\)), which is often estimated using the Normalized Difference Vegetation Index (NDVI) as a proxy for surface roughness and vegetation cover.\nIn the context of my work on Hong Kong, the distinction between sensors became immediately apparent. Landsat provides a high spatial resolution (30m to 100m depending on the sensor), which is essential for a city like Hong Kong characterized by extreme density and complex street canyons. In my landsat.jpg result, I can see fine-grained temperature variations between individual building clusters and the surrounding greenery. Conversely, the MODIS.jpg result demonstrates a much coarser spatial resolution (1km). While MODIS offers superior temporal resolution (daily revisits), its “blocky” output fails to capture the intricate thermal micro-climates of Hong Kong’s districts, essentially smoothing over the sharp temperature gradients between the dense Kowloon peninsula and the adjacent Victoria Harbour.\nFinally, the comparison between LST mean &lt; 10.jpg and LST mean &lt; 50.jpg highlights the importance of data cleaning and temporal averaging. By aggregating multiple images and filtering outliers (such as cloud-contaminated pixels or extreme sensor noise), we can produce a more “representative” map of the city’s thermal behavior rather than a snapshot of a single, potentially anomalous day.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#applications-in-the-hong-kong-context",
-    "href": "week8.html#applications-in-the-hong-kong-context",
-    "title": "8. Temperature",
-    "section": "2. Applications in the Hong Kong Context",
-    "text": "2. Applications in the Hong Kong Context\nThe interpretation of my Hong Kong LST maps has profound implications for urban planning, public health, and environmental policy within the territory. Hong Kong is one of the most densely populated places on Earth, and the thermal maps clearly identify “hot spots” in areas like Mong Kok, Sham Shui Po, and Kwun Tong. These areas correlate with high building density and low Sky View Factor (SVF), where heat is trapped within narrow street canyons.\nOne primary application is in Urban Climate Map (UZM) Integration. By identifying the hottest zones in the LST mean maps, urban planners can designate “Air Ventilation Corridors.” For instance, the maps show cooler temperatures along the coastal fringes and near the gaps between mountains. Planners can use this data to ensure that new developments do not block the prevailing sea breezes that help flush out accumulated heat from the urban core.\nFurthermore, these results are critical for Public Health and Social Equity. There is a documented correlation in Hong Kong between high LST and the locations of sub-divided flats. Residents in these poorly ventilated units are at higher risk of heat-related illnesses. By overlaying LST maps with socio-economic census data, the government can prioritize the installation of “cool roofs,” greening projects, or the establishment of temporary heat shelters in the specific neighborhoods highlighted in red on my Landsat output.\nLastly, the data serves Energy Demand Forecasting. The sharp temperature peaks seen in the Kowloon area directly translate to increased cooling loads. Utility companies like CLP and HK Electric can use high-resolution LST data to model peak electricity demand during summer months. This allows for more efficient grid management and encourages the implementation of District Cooling Systems (DCS) in the most thermally stressed areas to reduce the overall anthropogenic heat contribution to the local environment.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#applications-analyzing-hong-kongs-thermal-patterns",
-    "href": "week8.html#applications-analyzing-hong-kongs-thermal-patterns",
-    "title": "8. Temperature",
-    "section": "2. Applications: Analyzing Hong Kong’s Thermal Patterns",
-    "text": "2. Applications: Analyzing Hong Kong’s Thermal Patterns\nThe application of LST mapping in Hong Kong is highly significant due to the city’s extreme density and unique topography. By analyzing the final aggregated mean datasets (Figures 2 and 3), we can clearly identify the “thermal fingerprint” of the territory. The maps reveal a stark contrast between the natural “heat sinks” of the New Territories’ mountains and the intense “heat islands” of the Kowloon Peninsula and Northern Hong Kong Island.\n\n\n\n\n\n\nFigure 2: Figure 2: Aggregated Mean LST Map of Hong Kong. This result reveals intense hotspots (red) concentrated over high-density urban zones, providing a robust baseline for UHI analysis.\n\n\n\nOne primary application of this data is Urban Design and Ventilation. Hong Kong’s Planning Department utilizes “Air Ventilation Assessments” (AVA) to ensure that new skyscrapers do not block sea breezes. My LST maps provide the empirical evidence needed for these assessments. The bright red zones in districts like Sham Shui Po, Mong Kok, and Kwun Tong align with areas of low Sky View Factor (SVF). Planners can use this data to mandate “breezeways” or air corridors that align with the cooler coastal margins (shown in green/blue) to help flush out the stagnant, trapped heat from the urban core.\n\n\n\n\n\n\nFigure 3: Figure 3: Alternative Mean LST aggregation. This map confirms the consistency of the thermal patterns across different temporal filtering methods.\n\n\n\nFurthermore, these maps are vital for Public Health and Social Equity. In Hong Kong, there is a strong correlation between high LST and the location of subdivided flats (SDUs). Residents in these units face significantly higher heat-related health risks. By overlaying this thermal data with socio-economic census data, the government can prioritize neighborhoods for “cool roof” initiatives or the installation of community heat shelters. Additionally, utility companies can use this high-resolution data to forecast peak cooling loads for the power grid, allowing for more efficient energy distribution during the sweltering summer months.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#summary-retrieval-and-methodology",
-    "href": "week8.html#summary-retrieval-and-methodology",
-    "title": "8. Temperature",
-    "section": "",
-    "text": "This week’s learning focused on the complex workflow required to derive Land Surface Temperature (LST) from satellite imagery, specifically within the context of the Urban Heat Island (UHI) effect. While the external course materials utilized various global examples, I focused my practical work entirely on Hong Kong. LST is not a direct measurement; it is a calculated product derived from the Thermal Infrared (TIR) bands of sensors like Landsat 8/9 or MODIS. The retrieval process is a multi-stage physical conversion that accounts for atmospheric interference and surface properties.\nThe technical workflow begins by converting raw Digital Numbers (DN) into Top-of-Atmosphere (TOA) spectral radiance. From there, we calculate the Brightness Temperature (\\(T_B\\)), which represents the temperature of a blackbody emitting the same amount of radiation. However, because the Earth’s surface is not a perfect blackbody, we must incorporate Land Surface Emissivity (\\(\\epsilon\\)). In my work, I utilized the Normalized Difference Vegetation Index (NDVI) thresholds to estimate emissivity, as vegetation and urban concrete have vastly different thermal properties. This is crucial for Hong Kong, where the transition from dense urban canyons to lush country parks is incredibly sharp.\nThe trade-off between sensors was the most critical takeaway. In my initial processing, I produced a raw LST map (Figure 1) using Landsat data. The result is a high-resolution 30-meter product that allows for the identification of thermal signatures at the building-block scale.\n\n\n\n\n\n\nFigure 1: Figure 1: Raw single-day Land Surface Temperature (LST) Map of Hong Kong. This initial processing produces a detailed, high-resolution result dominated by cool temperatures, likely representing a winter or early spring acquisition.\n\n\n\nTo produce a reliable analysis for a dissertation, a single snapshot is often insufficient due to cloud contamination or seasonal anomalies. Therefore, I moved toward creating an “LST Mean” product. This involves aggregating multiple satellite passes and applying a cleaning mask to filter out “bad” pixels. This ensures that the resulting red “hotspots” seen in the mean maps represent persistent thermal behavior rather than a one-off weather event. This methodology provides the statistical rigor needed for urban spatial science applications.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#reflection-scale-frequency-and-data-integrity",
-    "href": "week8.html#reflection-scale-frequency-and-data-integrity",
-    "title": "8. Temperature",
-    "section": "3. Reflection: Scale, Frequency, and Data Integrity",
-    "text": "3. Reflection: Scale, Frequency, and Data Integrity\nReflecting on this exercise, the most significant realization was the “Scale vs. Frequency” trade-off. Before this task, I assumed that more frequent data was always superior. However, comparing the MODIS result (Figure 4) with my Landsat work changed my perspective. MODIS provides daily data, which is excellent for monitoring regional climate trends across the Pearl River Delta. But for a city with Hong Kong’s complexity, a 1km MODIS pixel is far too coarse; it effectively “blurs” a sweltering industrial estate with an adjacent cool park, losing the nuance required for urban planning.\n\n\n\n\n\n\nFigure 4: Figure 4: Coarse 1km resolution MODIS LST data. While the general location of the urban heat island is visible, the “blocky” resolution fails to capture the intricate thermal micro-climates of Hong Kong’s districts.\n\n\n\nThis taught me that “spatial resolution” is not just a technical spec—it is a requirement for policy accuracy. Figures 1 through 3 demonstrate that for neighborhood-level interventions, 30-meter Landsat data is the gold standard. I also found the “interpretation of the green” to be as important as the red. Seeing the cool blue/green signatures of the Sai Kung Peninsula and Lantau Peak reinforces the vital “ecosystem service” our Country Parks provide. They act as the city’s lungs and thermal buffers, and this visual evidence is a powerful tool for conservation advocacy.\nFinally, I realized that atmospheric correction is the most “fragile” part of the LST workflow. Because Hong Kong is a coastal city with high humidity and frequent aerosols, the air between the ground and the satellite can distort temperature readings by several degrees. This demands a high degree of critical thinking; as a data analyst, I must ask if a “hotspot” is a real urban feature or simply a result of uncorrected atmospheric water vapor. Moving forward, I am interested in exploring nighttime LST data. Since the UHI effect is often most dangerous at night when concrete releases its stored heat, understanding the “diurnal temperature range” will be my next step in mastering urban spatial science.",
-    "crumbs": [
-      "Learning Diary",
-      "8. Temperature"
-    ]
-  },
-  {
-    "objectID": "week8.html#summary-1",
-    "href": "week8.html#summary-1",
-    "title": "Learning Diary: Urban Temperature Analysis in Hong Kong",
-    "section": "8.1. Summary",
-    "text": "8.1. Summary\nThis week’s learning made me see how tricky it is to get Land Surface Temperature (LST) maps from satellite images. Instead of using the course’s example cities, I worked only on Hong Kong to see how heat works in my own city, with its tall buildings, busy harbour, and green hills. LST is not a simple reading—it is a multi-stage product derived from thermal infrared bands. The process starts with raw Digital Numbers (DN) which are converted into radiance, then Brightness Temperature (\\(T_B\\)). To reach the final LST, I corrected for Land Surface Emissivity (\\(\\epsilon\\)) using NDVI as a proxy. This is vital for Hong Kong because the transition from the concrete canyons of Kowloon to the lush New Territories requires vastly different emissivity values; getting this wrong would completely mix up my hot and cool spots.\nMy initial Landsat map (Figure 5) provided 30m detail, showing clear heat islands in busy areas contrasted against the sea. However, because a single snapshot can be misleading due to weather anomalies, I generated “LST Mean” products. Figures 6 and 7 show the lowest 10% and 50% of temperatures across the territory. These aggregated maps reveal that red-hot areas in Sham Shui Po, Mong Kok, and Kwun Tong align perfectly with low “Sky View Factors,” where heat is trapped by dense architecture. This data has immediate applications for Urban Design; planners can use these maps for Air Ventilation Assessments (AVA) to ensure new skyscrapers don’t block the sea breezes that flush out this trapped heat.\n\n\n\n\n\n\nFigure 5: Raw single-day Land Surface Temperature (LST) Map of Hong Kong.\n\n\n\n\n\n\n\n\n\nFigure 6: Aggregated Mean LST Map of Hong Kong (Lowest 10%).\n\n\n\n\n\n\n\n\n\nFigure 7: Alternative Mean LST aggregation (Lowest 50%).\n\n\n\nBeyond spatial maps, I used Google Earth Engine to capture the “heartbeat” of the city through a temporal time series (Figure 8). Using MODIS data for the summer of 2022, I tracked how LST oscillates between \\(25^{\\circ}C\\) and \\(35^{\\circ}C\\). The gaps in the chart are a perfect “signature” of the Hong Kong monsoon—clouds block the thermal sensors, making continuous data retrieval difficult. This temporal view is critical for Public Health; a single hot day is manageable, but sustained peaks like those seen in late July represent dangerous periods for residents in subdivided flats (SDUs). By overlaying this heat data with census records, the government can better prioritize community heat shelters and predict peak energy demand for cooling.\n\n\n\n\n\n\nFigure 8: MODIS LST Time Series for Hong Kong (Summer 2022). The fluctuations show the cumulative heat stress on the city, punctuated by data gaps from cloud cover.\n\n\n\n\n\n\n\n\n\nFigure 9: Coarse 1km resolution MODIS LST data.\n\n\n\nThe biggest takeaway from this exercise was the scale vs. frequency trade-off. Comparing my MODIS map (Figure 9) to Landsat showed me that while MODIS gives daily updates, its 1km pixels are too “blurry” for Hong Kong; they merge hot industrial zones with cool parks, hiding the details needed for street-level planning. For neighborhood-level intervention, the 30m resolution of Landsat is non-negotiable. However, I’ve also learned that atmospheric correction is the “fragile link” in this chain. Hong Kong’s high humidity and sea aerosols can distort readings by several degrees. As a future urban analyst, I now look at these maps with a critical eye, always asking if a hotspot is a real building or just an artifact of bad air correction. Seeing the cool signatures of the Sai Kung and Lantau Country Parks proves they act as the city’s lungs, and this visual evidence is my strongest tool for arguing for green space protection. Moving forward, I want to explore nighttime LST data, as trapped concrete heat after dark is often the most dangerous for our citizens.",
-    "crumbs": [
-      "Learning Diary",
-      "Learning Diary: Urban Temperature Analysis in Hong Kong"
-    ]
-  },
-  {
-    "objectID": "week1.html#gemini-said",
-    "href": "week1.html#gemini-said",
-    "title": "1. Introduction of remote sensing",
-    "section": "Gemini said",
-    "text": "Gemini said\nI have learned many new things in this module. At first, the theory of remote sensing was difficult. I studied how electromagnetic waves interact with the surface of the Earth. I learned about absorption, transmission, and reflection. These concepts are very important for understanding satellite data. I now understand that every surface has a unique spectral signature. I faced some technical problems during the practical work. My MacBook could not run the SNAP software. This was a big challenge for me at the start of the project. However, I decided to use QGIS instead. QGIS is a very powerful tool for spatial analysis. It allowed me to visualize the different Sentinel-2 bands. I learned how to merge these bands to create a clear map. This experience taught me how to be flexible with different software tools. This visual analysis is the first step for any urban project. This skill is very useful for my future career. I want to work as a data analyst or in a government job in Hong Kong. Land use and urban planning are very important topics in my home city. I can use remote sensing to monitor how the city grows over time. I can also check the health of the vegetation in urban areas. This module helped me connect classroom theory with real-world practice. I feel more confident using GIS software now. I understand that collecting data is just the beginning. The most important part is how we interpret the information to solve urban problems.",
-    "crumbs": [
-      "Learning Diary",
-      "1. Introduction of remote sensing"
-    ]
-  },
-  {
-    "objectID": "week3.html#ndvi",
-    "href": "week3.html#ndvi",
-    "title": "3. Corrections",
-    "section": "3.2.1 NDVI",
-    "text": "3.2.1 NDVI\nThe Normalized Difference Vegetation Index (NDVI) was calculated to identify healthy vegetation. In my output for Macau, high NDVI values are concentrated in Coloane and the hilly regions of Taipa.\nThis index is crucial for urban studies because vegetation cover is often negatively correlated with the Urban Heat Island (UHI) effect. By mapping NDVI, we can identify which parts of Macau’s dense urban core lack green space.\n\n\n\n\n\n\nFigure 1: Macau NDVI Vegetation Index (March 2025)",
-    "crumbs": [
-      "Learning Diary",
-      "3. Corrections"
-    ]
-  },
-  {
-    "objectID": "week3.html#texture-analysis",
-    "href": "week3.html#texture-analysis",
-    "title": "3. Corrections",
-    "section": "3.2.2 Texture Analysis",
-    "text": "3.2.2 Texture Analysis\nSpectral data alone can sometimes struggle to distinguish between different types of man-made surfaces. Following the methodology of Kupidura (2019), I applied Texture Analysis using the Gray-Level Co-occurrence Matrix (GLCM) Contrast metric.\nThe results clearly show that the Macau Peninsula has very high texture values. This reflects a highly fragmented and dense urban morphology with narrow streets and old buildings. In contrast, the Cotai Strip shows more regular, geometric patterns.\n\n\n\n\n\n\nFigure 2: Macau GLCM Texture Contrast showing Urban Morphology\n\n\n\n\n3.2.3 Synthesis for Urban Science\nBy combining spectral information (NDVI) and spatial structure (Texture), we can quantify the level of urban development in Macau. For example, new reclamation zones show low values in both maps, indicating they are in the early stages of development. This integrated approach proves that combining these two methods is the most effective way to analyze complex urban environments.",
-    "crumbs": [
-      "Learning Diary",
-      "3. Corrections"
-    ]
-  },
-  {
-    "objectID": "week3.html#reflection-1",
-    "href": "week3.html#reflection-1",
-    "title": "3. Corrections",
-    "section": "3.3 Reflection",
-    "text": "3.3 Reflection\nThis week, I learned that satellite images are not always ready to use right away. Before we can study them, we must fix errors caused by the atmosphere or the satellite itself. This process is called Correction. I now understand that without fixing these “blurry” or “distorted” parts, our final maps would be wrong. For example, if we do not remove the haze from the air, we might think a forest is less green than it actually is. When I applied these ideas to my study of Macau, I saw how powerful these tools are. Using the NDVI (Vegetation Index), I could clearly see the difference between the green hills in Coloane and the crowded city areas. It was interesting to learn that trees and plants help cool down cities. In a crowded place like Macau, NDVI helps us find “gray” areas that need more parks to stop them from getting too hot. This is a very practical way to help urban planners.\nI also tried Texture Analysis, which was a new concept for me. While NDVI tells us what is on the ground (like grass or water), Texture tells us how buildings are packed together. In the old parts of the Macau Peninsula, the texture was very “rough” because the buildings are small and the streets are narrow. But in the Cotai Strip, the texture looked more “smooth” and regular because of the big, modern casinos. In conclusion, I have learned that a good urban study needs more than just one type of map. By combining color (NDVI) and shape (Texture), we get a much better picture of how a city is growing. This week’s work has shown me that remote sensing is not just about pretty pictures; it is a vital tool for making cities better places to live.",
-    "crumbs": [
-      "Learning Diary",
-      "3. Corrections"
     ]
   }
 ]
