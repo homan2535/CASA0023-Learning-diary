@@ -13,7 +13,7 @@ This week was all about the "Battle of the Algorithms." I took the training data
 
 While both models are trying to do the same thing—group pixels into classes like Urban, Forest, and Water—they go about it in very different ways. CART is like a single person making a decision tree, while Random Forest is like a whole committee of trees voting on the final result.
 
-## 6.2 The Two Models
+## 6.1.1 The Two Models
 
 ### 1. CART (Classification and Regression Trees)
 CART is a simple and fast algorithm. It looks at the spectral bands and makes a series of "if-then" choices to sort pixels. For example, "If the NIR band is high, it is probably a tree." However, because it's just one tree, it can be quite "brittle." If your training data is a bit messy, the whole tree gets confused easily.
@@ -21,14 +21,14 @@ CART is a simple and fast algorithm. It looks at the spectral bands and makes a 
 ### 2. Random Forest (RF)
 Random Forest is much more robust. It creates many different decision trees using random subsets of the data and then averages the results. This "ensemble" approach usually helps to fix the mistakes that a single tree might make. 
 
-#### 6.2.1 Machine Learning Overview
+#### 6.1.2 Machine Learning Overview
 
 | Algorithm | Type | Description |
 |:---|:---:|:---|
 | **CART** | Supervised | Uses a single decision tree to split pixels into groups based on spectral values. |
 | **Random Forest** | Supervised | An "ensemble" model that generates numerous decision trees (usually at least 20-100) using random sampling to reach a final classification through voting. |
 
-## 6.3 Observations: CART vs. Random Forest
+## 6.1.3 Observations: CART vs. Random Forest
 
 When looking at the two outputs, there are some really clear differences in how they "see" the city.
 
@@ -42,7 +42,7 @@ One thing both models struggled with was the difference between "Urban" and "Bar
 
 ---
 
-## 6.4 Visual Analysis
+## 6.1.4 Visual Analysis
 
 Below are the results showing how the two models classified the same area.
 
@@ -54,7 +54,7 @@ Below are the results showing how the two models classified the same area.
 
 After running both models on the Shenzhen study area, I can see why one is often preferred over the other.
 
-## 6.5 Analysis Table
+## 6.1.5 Analysis Table
 
 | Model | **Strengths** | **Weaknesses** | **How to Make Better** |
 |:---|:---|:---|:---|
@@ -63,27 +63,21 @@ After running both models on the Shenzhen study area, I can see why one is often
 
 ---
 
-## 6.6 Application
+## 6.2 Application
 
-Machine learning models have become the go-to tool for tracking how cities grow and change over time. Using Google Earth Engine, we can run "Land Use and Land Cover Change" (LULCC) analysis to monitor urban sprawl or environmental health much faster than traditional methods. However, one of the biggest lessons I learned this week is that simply picking a "fancy" algorithm like Random Forest isn't enough. 
+In this section, I apply the theoretical concepts from the study by [Pal (2005)](https://www.tandfonline.com/doi/full/10.1080/01431160512331314083) to my own classification results for the Shenzhen and Hong Kong regions. Pal’s research specifically compares the performance of a single decision tree (CART) against the Random Forest (RF) ensemble method, which matches the "Battle of the Algorithms" I conducted this week.
 
-The quality of your map depends heavily on the "features" you feed into the computer. A study by [Phiri et al. (2020)](https://doi.org/10.3390/rs12142270) found that while Random Forest is incredibly powerful, its performance really jumps when you add more than just basic spectral bands. By incorporating things like vegetation indices (NDVI) and water indices, the model gets much better at distinguishing between tricky surfaces that look similar, like wet soil and dark pavement. 
+According to [Pal (2005)](https://www.tandfonline.com/doi/full/10.1080/01431160512331314083), one of the primary advantages of Random Forest is its ability to achieve higher classification accuracy compared to a single decision tree. My observations in Section 6.3 align with this; I found that the Random Forest validation accuracy was higher than CART’s. Pal explains that because RF is an "ensemble" model—meaning it uses a "committee" of many trees—it reduces the risk of overfitting. In my study, CART tended to "memorize" the specific training points too closely, making it "brittle" when classifying new areas. RF, however, used random subsets of data to create many trees, allowing it to generalize much better across the complex urban fabric of the Pearl River Delta.
 
-In addition to basic land cover mapping, CART and Random Forest are used for more specific urban challenges.
+### 6.2.1 Handling Noise and Complex Classes
+My visual analysis in Section 6.4 showed that the CART map had more "salt and pepper" noise, while the RF map appeared more solid. [Pal (2005)](https://www.tandfonline.com/doi/full/10.1080/01431160512331314083) supports this by stating that Random Forest is more robust when dealing with "noisy" data or complex land cover types. For instance, both my models struggled to distinguish between "Urban" concrete and "Bare Earth." Pal’s research suggests that while a single tree might get confused by these similar spectral signatures, the voting system in a Random Forest helps to "average out" these errors. This explains why my RF output was cleaner and more reliable for identifying the dense urban structures in Shenzhen.
 
-### Case Study: Urban Expansion and Resource Management
-This is super relevant for urban planning. [Phiri et al. (2020)](https://doi.org/10.3390/rs12142270) showed how these classifiers are used to monitor rapid urban growth in areas where local data might be missing. By using Random Forest in the cloud, researchers can map out "impervious surfaces" (like concrete and roads) to see how much natural land is being lost. 
-
-I think this is a vital tool for the kind of work I want to do in disaster risk reduction. If we know exactly where the city is becoming more "concrete-heavy," we can predict where urban heat islands will form or where flooding will be worst. It really highlights that while the algorithm is the "engine," the extra indices and features are the "fuel" that actually makes the classification accurate. This is exactly why my own classification in GEE felt like such a struggle—I realized I need to be much more strategic about which data I include to help the computer tell the difference between "Urban" and "Bare Earth."
-
-### Case Study: Explaining Urban Sprawl with CART
-Another interesting use of these tools is modeling how cities grow. [Rimal et al. (2019)](https://doi.org/10.3390/su11092571) used **CART** to analyze rapid urbanization in the Kathmandu Valley. They used the "decision tree" logic of CART to find out exactly which factors—like how close an area is to a road—were the biggest drivers of turning farmland into buildings. 
-
-What I like about CART here is that it’s "explainable." Because it’s just a series of yes/no questions, a city planner can actually follow the logic and understand *why* the computer thinks a certain area will become urbanized. In my own experiment, I saw that Random Forest was more accurate, but CART is definitely better for when you need to explain your results to a human instead of just showing a map. The downside, as noted by the researchers and seen in my own work, is that CART is very sensitive. If your training data has a small mistake, the whole "tree" can grow in the wrong direction.
+### 6.2.2 Processing Requirements
+Finally, the author mentions that while RF is more accurate, it requires more computational power because it has to generate and manage many trees (often 100 or more). I noticed this during my practical work: CART ran very fast, but Random Forest took longer to process the detailed satellite tiles. However, as Pal concludes, the significant increase in accuracy and the reduction in visual noise make Random Forest the superior choice for large-scale urban mapping projects.
 
 ---
 
-## 6.7 Reflection
+## 6.3 Reflection
 
 This was a really interesting experiment because it showed me that more complex isn't always "perfect," but it usually is "better." Seeing that **Random Forest had a higher validation accuracy** than CART really proved the point we keep hearing in our UCL lectures about ensemble models being more reliable. 
 

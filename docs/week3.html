@@ -169,6 +169,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">7. Classification II</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Temperature</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -181,17 +187,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">1. Summary</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">3.1. Summary</a>
   <ul class="collapse">
   <li><a href="#spectral-ratios-and-the-ndvi" id="toc-spectral-ratios-and-the-ndvi" class="nav-link" data-scroll-target="#spectral-ratios-and-the-ndvi">Spectral Ratios and the NDVI</a></li>
   <li><a href="#texture-and-spatial-complexity" id="toc-texture-and-spatial-complexity" class="nav-link" data-scroll-target="#texture-and-spatial-complexity">Texture and Spatial Complexity</a></li>
   </ul></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">2. Application</a>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">3.2 Application</a>
   <ul class="collapse">
-  <li><a href="#burn-severity-with-nbr" id="toc-burn-severity-with-nbr" class="nav-link" data-scroll-target="#burn-severity-with-nbr">1. Burn Severity with NBR</a></li>
-  <li><a href="#distinguishing-informal-settlements-slums" id="toc-distinguishing-informal-settlements-slums" class="nav-link" data-scroll-target="#distinguishing-informal-settlements-slums">2. Distinguishing Informal Settlements (Slums)</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">3. Reflection</a></li>
+  <li><a href="#ndvi" id="toc-ndvi" class="nav-link" data-scroll-target="#ndvi">3.2.1 NDVI</a></li>
+  <li><a href="#texture-analysis" id="toc-texture-analysis" class="nav-link" data-scroll-target="#texture-analysis">3.2.2 Texture Analysis</a>
+  <ul class="collapse">
+  <li><a href="#synthesis-for-urban-science" id="toc-synthesis-for-urban-science" class="nav-link" data-scroll-target="#synthesis-for-urban-science">3.2.3 Synthesis for Urban Science</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">3.3 Reflection</a></li>
+  <li><a href="#reflection-1" id="toc-reflection-1" class="nav-link" data-scroll-target="#reflection-1">3.3 Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -218,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">1. Summary</h2>
+<h2 class="anchored" data-anchor-id="summary">3.1. Summary</h2>
 <p>Remote sensing data pre-processing is broadly divided into two critical phases: <strong>Corrections</strong> and <strong>Enhancements</strong>. While corrections focus on rectifying errors introduced by the atmosphere or sensor mechanics, enhancements are designed to amplify the signal and extract hidden geographical patterns.</p>
 <section id="spectral-ratios-and-the-ndvi" class="level3">
 <h3 class="anchored" data-anchor-id="spectral-ratios-and-the-ndvi">Spectral Ratios and the NDVI</h3>
@@ -259,25 +270,54 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="application" class="level2">
-<h2 class="anchored" data-anchor-id="application">2. Application</h2>
-<p>The practical applications of these enhancements extend far beyond simple mapping, offering critical insights into environmental resilience and social equity.</p>
-<section id="burn-severity-with-nbr" class="level3">
-<h3 class="anchored" data-anchor-id="burn-severity-with-nbr">1. Burn Severity with NBR</h3>
-<p>In the context of disaster management, the <strong>Normalized Burn Ratio (NBR)</strong> is an indispensable tool. Similar to NDVI, NBR contrasts the NIR and Shortwave Infrared (SWIR) bands to identify burnt areas. Healthy vegetation reflects NIR and absorbs SWIR, whereas bare ground or recent burns show the opposite pattern. By calculating the difference between pre-fire and post-fire NBR (<strong>dNBR</strong>), researchers can accurately assess burn severity, providing a data-driven foundation for post-disaster land management and recovery.</p>
+<h2 class="anchored" data-anchor-id="application">3.2 Application</h2>
+<p>In this section, the study area of <strong>Macau</strong> is analyzed using <strong>Landsat 8-9 OLI/TIRS Collection 2 Level 2</strong> data. While Level 2 data is pre-processed for atmospheric correction, further <strong>imagery enhancements</strong> are required to understand the complex urban structure of Macau. This workflow focuses on two primary methods: spectral indices and spatial texture analysis.</p>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 </section>
-<section id="distinguishing-informal-settlements-slums" class="level3">
-<h3 class="anchored" data-anchor-id="distinguishing-informal-settlements-slums">2. Distinguishing Informal Settlements (Slums)</h3>
-<p>Perhaps one of the most socially relevant applications of remote sensing is the detection of informal urban settlements. Standard spectral ratios often fail here because slums and formal housing may use similar construction materials, leading to the “same spectrum, different object” problem.</p>
-<p>Literature by <strong>Wang, Kuffer, and Pfeffer (2019)</strong> demonstrates that texture analysis (GLCM) is far more effective at identifying slums. Because informal settlements often lack planned grids and exhibit higher structural heterogeneity (higher “roughness”), texture metrics can distinguish them from organized, formal neighborhoods. This application is vital for urban planners aiming to address the digital and infrastructural divide in rapidly growing global cities.</p>
+</section>
+<section id="ndvi" class="level2">
+<h2 class="anchored" data-anchor-id="ndvi">3.2.1 NDVI</h2>
+<p>The Normalized Difference Vegetation Index (NDVI) was calculated to identify healthy vegetation. In my output for Macau, high NDVI values are concentrated in Coloane and the hilly regions of Taipa.</p>
+<p>This index is crucial for urban studies because vegetation cover is often negatively correlated with the Urban Heat Island (UHI) effect. By mapping NDVI, we can identify which parts of Macau’s dense urban core lack green space.</p>
+<div id="fig-macau-ndvi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-macau-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ndvi.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-macau-ndvi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Macau NDVI Vegetation Index (March 2025)
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="texture-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="texture-analysis">3.2.2 Texture Analysis</h2>
+<p>Spectral data alone can sometimes struggle to distinguish between different types of man-made surfaces. Following the methodology of Kupidura (2019), I applied Texture Analysis using the Gray-Level Co-occurrence Matrix (GLCM) Contrast metric.</p>
+<p>The results clearly show that the Macau Peninsula has very high texture values. This reflects a highly fragmented and dense urban morphology with narrow streets and old buildings. In contrast, the Cotai Strip shows more regular, geometric patterns.</p>
+<div id="fig-macau-text" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-macau-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="text.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-macau-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Macau GLCM Texture Contrast showing Urban Morphology
+</figcaption>
+</figure>
+</div>
+<section id="synthesis-for-urban-science" class="level3">
+<h3 class="anchored" data-anchor-id="synthesis-for-urban-science">3.2.3 Synthesis for Urban Science</h3>
+<p>By combining <strong>spectral information (NDVI)</strong> and <strong>spatial structure (Texture)</strong>, we can quantify the level of urban development in Macau. For example, new reclamation zones show low values in both maps, indicating they are in the early stages of development. This integrated approach proves that combining these two methods is the most effective way to analyze <strong>complex urban environments</strong>.</p>
 <hr>
 </section>
 </section>
 <section id="reflection" class="level2">
-<h2 class="anchored" data-anchor-id="reflection">3. Reflection</h2>
-<p>Reflecting on this week’s transition from technical corrections to data enhancements, I have found the latter to be significantly more engaging. While corrections like Dark Object Subtraction (DOS) are necessary “cleaning” steps, enhancements like NDVI and Texture feel like the point where data truly begins to tell a story. There is a certain intellectual satisfaction in drawing out hidden narratives—such as the subtle “roughness” of an informal settlement—that would remain invisible in a raw satellite image.</p>
-<p>However, this week has also introduced a sense of professional nervousness regarding the subjectivity of these methods. My practical experience with Cape Town’s texture analysis revealed how much the final output depends on a single, seemingly arbitrary choice: the <strong>window size</strong>. Selecting a 3x3 window vs a 15x15 window doesn’t just change the look of the map; it changes the conclusion. If we pick an incorrect window size in a policy context, we risk misclassifying a vulnerable community or overlooking a critical environmental change.</p>
-<p>This realization reinforces my belief that remote sensing is a blend of science and art. The “same spectrum, different object” dilemma proves that spectral data is not the whole truth. It is the analyst’s responsibility to select the right combination of tools—such as <strong>Data Fusion</strong> between optical indices and texture metrics—to reduce reliance on manual trial and error.</p>
-<p>Furthermore, as I look toward my dissertation at UCL, I am increasingly aware that these complex calculations, particularly GLCM, are computationally heavy. Relying on GUIs like SNAP is becoming a bottleneck. To truly implement adaptive window sizes or integrate texture into deep learning networks, transitioning to <strong>Google Earth Engine</strong> or <strong>R</strong> is no longer just an advantage—it is a necessity for modern urban spatial science. The goal is to move beyond “fixing errors” and toward “deciphering complexity,” ensuring that our spatial interventions are grounded in the most accurate representation of reality possible.</p>
+<h2 class="anchored" data-anchor-id="reflection">3.3 Reflection</h2>
+</section>
+<section id="reflection-1" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-1">3.3 Reflection</h2>
+<p>This week, I learned that satellite images are not always ready to use right away. Before we can study them, we must fix errors caused by the atmosphere or the satellite itself. This process is called <strong>Correction</strong>. I now understand that without fixing these “blurry” or “distorted” parts, our final maps would be wrong. For example, if we do not remove the haze from the air, we might think a forest is less green than it actually is. When I applied these ideas to my study of <strong>Macau</strong>, I saw how powerful these tools are. Using the <strong>NDVI</strong> (Vegetation Index), I could clearly see the difference between the green hills in <strong>Coloane</strong> and the crowded city areas. It was interesting to learn that trees and plants help cool down cities. In a crowded place like Macau, NDVI helps us find “gray” areas that need more parks to stop them from getting too hot. This is a very practical way to help urban planners.</p>
+<p>I also tried <strong>Texture Analysis</strong>, which was a new concept for me. While NDVI tells us <em>what</em> is on the ground (like grass or water), Texture tells us <em>how</em> buildings are packed together. In the old parts of the Macau Peninsula, the texture was very “rough” because the buildings are small and the streets are narrow. But in the <strong>Cotai Strip</strong>, the texture looked more “smooth” and regular because of the big, modern casinos. In conclusion, I have learned that a good urban study needs more than just one type of map. By combining <strong>color (NDVI)</strong> and <strong>shape (Texture)</strong>, we get a much better picture of how a city is growing. This week’s work has shown me that remote sensing is not just about pretty pictures; it is a vital tool for making cities better places to live.</p>
 
 
 </section>

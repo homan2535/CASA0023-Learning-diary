@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ho Man Chan">
-<meta name="dcterms.date" content="2026-02-20">
 
-<title>About myself – My Remote Sensing Diary</title>
+<title>8. Temperature – My Remote Sensing Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./intro.html">About myself</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week8.html">8. Temperature</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About myself</span></a>
   </div>
 </li>
@@ -173,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week8.html" class="sidebar-item-text sidebar-link">
+  <a href="./week8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">8. Temperature</span></a>
   </div>
 </li>
@@ -189,38 +216,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About Me</a></li>
-  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">8.1. Summary</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">8.2. Applications</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">8.3. Reflection</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./intro.html">About myself</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Learning Diary</a></li><li class="breadcrumb-item"><a href="./week8.html">8. Temperature</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">About myself</h1>
+<h1 class="title">8. Temperature</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ho Man Chan </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 20, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -230,16 +244,75 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<section id="about-me" class="level3">
-<h3 class="anchored" data-anchor-id="about-me">About Me</h3>
-<p>Hi everyone! I’m Ho Man Chan, currently pursuing an MSc in Urban Spatial Science at University College London (UCL).</p>
-<p>I previously completed my undergraduate degree in Hong Kong and gained practical experience through a project management internship at Cushman &amp; Wakefield. My core interests lie in urban analytics, spatial data science, and health geography. I actively use computational tools like Python, SQL and R to model urban patterns and environmental processes.</p>
-<p>Through CASA0023, I aim to master advanced remote sensing in spatial analysis, and reproducible workflows for communicating urban insights. Outside academics, I enjoy city exploration, gym training, and sharing urban life/travel content on social media — experiences that shape my perspective on human-space interactions.</p>
-
-
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">8.1. Summary</h2>
+<p>This week’s learning made me see how tricky it is to get Land Surface Temperature (LST) maps from satellite images. Instead of using the course’s example cities, I worked only on Hong Kong to see how heat works in my own city, with its tall buildings, busy harbour, and green hills. LST is not a simple reading—it is a multi-stage product derived from thermal infrared bands. The process starts with raw Digital Numbers (DN) which are converted into radiance, then Brightness Temperature (<span class="math inline">\(T_B\)</span>). To reach the final LST, I corrected for Land Surface Emissivity (<span class="math inline">\(\epsilon\)</span>) using NDVI as a proxy. This is vital for Hong Kong because the transition from the concrete canyons of Kowloon to the lush New Territories requires vastly different emissivity values; getting this wrong would completely mix up my hot and cool spots.</p>
+<p>My initial Landsat map (<a href="#fig-landsat" class="quarto-xref">Figure&nbsp;1</a>) provided 30m detail, showing clear heat islands in busy areas contrasted against the sea. However, because a single snapshot can be misleading due to weather anomalies, I generated “LST Mean” products. Figures <a href="#fig-mean10" class="quarto-xref">2</a> and <a href="#fig-mean50" class="quarto-xref">3</a> show the lowest 10% and 50% of temperatures across the territory. These aggregated maps reveal that red-hot areas in Sham Shui Po, Mong Kok, and Kwun Tong align perfectly with low “Sky View Factors,” where heat is trapped by dense architecture. This data has immediate applications for Urban Design; planners can use these maps for Air Ventilation Assessments (AVA) to ensure new skyscrapers don’t block the sea breezes that flush out this trapped heat.</p>
+<div id="fig-landsat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-landsat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="landsat.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-landsat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Raw single-day Land Surface Temperature (LST) Map of Hong Kong.
+</figcaption>
+</figure>
+</div>
+<div id="fig-mean10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mean10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="LSTmean10.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mean10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Aggregated Mean LST Map of Hong Kong (Lowest 10%).
+</figcaption>
+</figure>
+</div>
+<div id="fig-mean50" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mean50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="LSTmean50.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mean50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Alternative Mean LST aggregation (Lowest 50%).
+</figcaption>
+</figure>
+</div>
+<div id="fig-ee" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ee-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ee.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ee-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: MODIS LST Time Series for Hong Kong (Summer 2022)
+</figcaption>
+</figure>
+</div>
+<div id="fig-modis" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-modis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="MODIS.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Coarse 1km resolution MODIS LST data.
+</figcaption>
+</figure>
+</div>
+<p>The biggest thing I learned is that more data is not always better. I realized there is a big trade-off between scale and how often we get images. MODIS gives a photo every day, which sounds useful, but each pixel covers a very large area—about 1 km. This resolution is too rough for a crowded city like Hong Kong. It mixes the hot industrial areas with the cooler parks nearby, making it hard to see what is happening on each street. For real city planning, the 30 m detail from Landsat is much more helpful, even if we get fewer pictures.</p>
+<p>I also learned that <em>atmospheric correction</em> is the weakest step in the process. Because Hong Kong is very humid and close to the sea, the salt and moisture in the air can make the temperature data less accurate by a few degrees. As a future data analyst, I now read these maps more carefully. I always ask: is this really a hot building, or just an error caused by humid air? The cool colors over Sai Kung and Lantau show that our Country Parks act as the lungs of the city. This kind of visual proof is a strong way to explain why we should protect our green areas from new development.</p>
 </section>
+<section id="applications" class="level2">
+<h2 class="anchored" data-anchor-id="applications">8.2. Applications</h2>
+<p>i also looked at some papers to see how this heat stuff actually turns into real city rules. <strong><a href="https://www.tandfonline.com/doi/full/10.1080/01944363.2020.1759127">Stone et al.&nbsp;(2021)</a></strong> wrote about how cities are great at making these maps but then they don’t actually <em>do</em> anything with them. they call it the “planning-implementation gap.” basically, we make the maps but then we don’t change the building laws. for HK, this is a big deal because of our “wall-like buildings” that block all the air. we need to use these LST maps to force developers to leave “breezeways” in new districts like Kai Tak. if the map says a spot is too hot, the law should say “no more big towers here.” one limit of their paper is it’s mostly about US cities, so it doesn’t quite fit how vertical and tight HK is, but the main point about “acting on data” is definitely right.</p>
+<p>then i read <strong><a href="https://www.jstor.org/stable/3108472#metadata_info_tab_contents">Wong et al.&nbsp;(1996)</a></strong> which is an older paper but still super useful for a place like HK. they found that putting plants on walls and roofs (landscaping) really helps cool down the building and saves electricity for AC. this is exactly what we need in the “red” hotspots i found in my maps. but the problem is, keeping plants alive in a city is hard and uses a lot of water, especially when it’s <strong>35°C</strong> out. maybe in the future we can use machine learning to link my LST maps to automatic watering systems? that way we only water the “hot” buildings when they actually need it. it’s about balancing the green stuff with the actual budget of a city. we need to bridge the gap between “high-tech” data and “nature-based” solutions.</p>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">8.3. Reflection</h2>
+<p>Looking back on this project, I have realized that remote sensing is much more complicated than I first thought. When I started, I thought that getting temperature data from a satellite would be as easy as taking a photo with my phone. However, after working with the data for Hong Kong, I now understand that there are many technical steps and choices that can change the final result.</p>
+<p>The most important lesson I learned is the trade-off between scale and frequency. Before this week, I always believed that having more data was better. But comparing my MODIS map to my Landsat map changed my mind. Even though MODIS gives us an image every day, its 1km resolution is just too blurry for a crowded place like Hong Kong. In a city where a tiny park sits right next to a massive skyscraper, a 1km pixel mixes those two temperatures together. This makes the data almost useless for street-level planning. For my future work as an urban analyst, I now know that high-resolution data like Landsat is “non-negotiable” if I want to help people living in specific neighborhoods.</p>
+<p>I also found the issue of atmospheric correction very interesting. Since Hong Kong is a coastal city with high humidity, the moisture in the air can easily mess up the satellite readings. This taught me to be more critical. Instead of just looking at a “hot” red spot and believing it immediately, I now ask if the heat is real or if it is just an error caused by the humid air. Finally, seeing the maps made me feel more protective of our green spaces. The cool blue colors over the Country Parks compared to the bright red over Kowloon really prove that these areas are the “lungs” of our city. In the future, I want to explore nighttime data because heat trapped in concrete after dark is very dangerous for people in subdivided flats. I hope my research can eventually help the government make better laws to keep Hong Kong cool and livable.</p>
+
+
 </section>
 
 </main> <!-- /main -->
