@@ -45,7 +45,7 @@ This index is crucial for urban studies because vegetation cover is often negati
 
 ![Macau NDVI Vegetation Index (March 2025)](ndvi.png){#fig-macau-ndvi width="100%"}
 
-## 3.2.2 Texture Analysis 
+## 3.2.2 Texture Analysis
 
 Spectral data alone can sometimes struggle to distinguish between different types of man-made surfaces. Following the methodology of Kupidura (2019), I applied Texture Analysis using the Gray-Level Co-occurrence Matrix (GLCM) Contrast metric.
 
@@ -58,8 +58,6 @@ The results clearly show that the Macau Peninsula has very high texture values. 
 By combining **spectral information (NDVI)** and **spatial structure (Texture)**, we can quantify the level of urban development in Macau. For example, new reclamation zones show low values in both maps, indicating they are in the early stages of development. This integrated approach proves that combining these two methods is the most effective way to analyze **complex urban environments**.
 
 ------------------------------------------------------------------------
-
-## 3.3 Reflection
 
 ## 3.3 Reflection
 
