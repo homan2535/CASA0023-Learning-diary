@@ -25,7 +25,7 @@ Beyond pixel-by-pixel spectral values, **Texture Analysis** quantifies the spati
 A critical factor in texture analysis is the **moving window size**. While a small 3x3 window is adept at capturing fine details and precise boundaries, it often introduces "salt-and-pepper" noise. Conversely, larger windows provide a broader context but may obscure localized variations. This necessitates a strategic selection of metrics—such as homogeneity or contrast—to accurately characterize the urban fabric.
 
 | Enhancement | Primary Benefit | Main Limitation |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | **NDVI** | Rapidly assesses vegetation health and minimizes topography effects. | Often saturates in high-biomass areas (forests). |
 | **Texture** | Adds spatial context and structural complexity to images. | Highly sensitive to subjective window size choices. |
 
